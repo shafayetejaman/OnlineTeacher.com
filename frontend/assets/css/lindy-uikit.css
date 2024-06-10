@@ -2490,7 +2490,7 @@ button:focus {
   border-radius: 50%;
   background: linear-gradient(14deg, #8a9eef, #325f90);
   box-shadow: inset 50px 50px 50px gray,
-    
+
 }
 
 .num {
@@ -2532,16 +2532,16 @@ button:focus {
   justify-content: center;
 }
 
+/* --------------filtering------------------- */
+
+.filter-color {
+  background-color: #36373a;
+  color: #2F80ED;
+}
+
 /* time input */
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 
 }
 
-/* district */
-
-.dropdown-menu {
-  overflow: hidden;
-  overflow-y: auto;
-  max-height: calc(100vh - 150px);
-}

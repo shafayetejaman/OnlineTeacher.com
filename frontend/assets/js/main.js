@@ -103,4 +103,19 @@
 
 })();
 
-// input district
+
+// search name
+
+var input = document.getElementById("form1");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    search_name();
+  }
+});
+
+function search_name() {
+  document.getElementById("searchButton").click();
+  console.log(input.value);
+}
