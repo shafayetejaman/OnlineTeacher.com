@@ -2534,6 +2534,7 @@ button:focus {
 
 /* time input */
 input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 
 }
+
