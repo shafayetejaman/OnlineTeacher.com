@@ -2545,3 +2545,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 }
 
+#searchButton {
+
+  z-index: 1;
+}
