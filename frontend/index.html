@@ -55,7 +55,7 @@
     <!-- ========================= header-6 start ========================= -->
     <header class="header header-6">
       <div class="navbar-area">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
@@ -138,6 +138,7 @@
 
   <!-- /* teacher details card section */ -->
   <section class="my-5 py-5">
+    <h3 class="text-center mt-5 fw-bolder text-primary">Filter<i class="lni lni-search"></i></h3>
     <div class="filtering m-5 pb-5">
 
       <div class="d-lg-flex justify-content-around">
@@ -174,14 +175,12 @@
           <div class="m-3">
 
             <label for="appt" class="h4 m-2">Start time:</label>
-            <input type="time" id="appt" name="appt" value="18:30"
-              class="time-input rounded-2 border-2 h5 p-1 filter-color">
+            <input type="time" id="appt" name="appt" value="18:30" class="time-input h5 p-1 filter-color">
           </div>
           <div class="m-3">
 
             <label for="appt" class="h4 m-2 me-4">End time:</label>
-            <input type="time" id="appt" name="appt" value="18:30"
-              class="time-input rounded-2 border-2 h5 p-1 filter-color">
+            <input type="time" id="appt" name="appt" value="18:30" class="time-input h5 p-1 filter-color">
           </div>
         </div>
       </div>
@@ -233,144 +232,188 @@
             <div class="form-outline" data-mdb-input-init>
               <input type="search" id="form1" class="form-control p-3 px-4" placeholder="Search Name" />
             </div>
-            <button onclick="search_name()" type="button" id="searchButton" class="btn btn-primary p-3" data-mdb-ripple-init>
+            <button class="btn btn-primary p-2" type="button" id="searchButton">
               <i class="lni lni-search-alt"></i>
             </button>
+
           </div>
         </div>
 
       </div>
     </div>
 
+    <!-- teacher cards -->
+    <section class="container">
+      <div class="row row-cols-3 gap-5 justify-content-center">
+        <div class="col card p-3 py-4">
+          <div class="text-center">
+            <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
+            <h3 class="my-2">A.M Shafayet E Jaman</h3>
+            <span class="clearfix">Bachelor of Science in C.S.E</span>
 
+            <div class="row mt-3 mb-3">
 
-    <div class="row row-cols-3 gap-5 justify-content-center">
-      <div class="col card p-3 py-4">
-        <div class="text-center">
-          <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
-          <h3 class="my-2">A.M Shafayet E Jaman</h3>
-          <span class="clearfix">Bachelor of Science in C.S.E</span>
+              <div class="col-md-4">
+                <h5>Start</h5>
+                <span class="num">2:30 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>End</h5>
+                <span class="num">5:00 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>Hours</h5>
+                <span class="num">2.5</span>
+              </div>
 
-          <div class="row mt-3 mb-3">
-
-            <div class="col-md-4">
-              <h5>Start</h5>
-              <span class="num">2:30 pm</span>
             </div>
-            <div class="col-md-4">
-              <h5>End</h5>
-              <span class="num">5:00 pm</span>
+
+            <hr class="line">
+
+            <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
+            <div class="social-buttons mt-5">
+              <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
+              <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
+              <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
+              <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
             </div>
-            <div class="col-md-4">
-              <h5>Hours</h5>
-              <span class="num">2.5</span>
+
+            <div class="profile mt-5">
+
+              <button class="profile_button px-5">View profile</button>
+
             </div>
 
           </div>
-
-          <hr class="line">
-
-          <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
-          <div class="social-buttons mt-5">
-            <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
-            <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
-            <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
-            <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
-          </div>
-
-          <div class="profile mt-5">
-
-            <button class="profile_button px-5">View profile</button>
-
-          </div>
-
         </div>
-      </div>
-      <div class="col card p-3 py-4">
-        <div class="text-center">
-          <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
-          <h3 class="my-2">A.M Shafayet E Jaman</h3>
-          <span class="clearfix">Bachelor of Science in C.S.E</span>
+        <div class="col card p-3 py-4">
+          <div class="text-center">
+            <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
+            <h3 class="my-2">A.M Shafayet E Jaman</h3>
+            <span class="clearfix">Bachelor of Science in C.S.E</span>
 
-          <div class="row mt-3 mb-3">
+            <div class="row mt-3 mb-3">
 
-            <div class="col-md-4">
-              <h5>Start</h5>
-              <span class="num">2:30 pm</span>
+              <div class="col-md-4">
+                <h5>Start</h5>
+                <span class="num">2:30 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>End</h5>
+                <span class="num">5:00 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>Hours</h5>
+                <span class="num">2.5</span>
+              </div>
+
             </div>
-            <div class="col-md-4">
-              <h5>End</h5>
-              <span class="num">5:00 pm</span>
+
+            <hr class="line">
+
+            <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
+            <div class="social-buttons mt-5">
+              <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
+              <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
+              <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
+              <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
             </div>
-            <div class="col-md-4">
-              <h5>Hours</h5>
-              <span class="num">2.5</span>
+
+            <div class="profile mt-5">
+
+              <button class="profile_button px-5">View profile</button>
+
             </div>
 
           </div>
-
-          <hr class="line">
-
-          <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
-          <div class="social-buttons mt-5">
-            <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
-            <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
-            <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
-            <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
-          </div>
-
-          <div class="profile mt-5">
-
-            <button class="profile_button px-5">View profile</button>
-
-          </div>
-
         </div>
-      </div>
-      <div class="col card p-3 py-4">
-        <div class="text-center">
-          <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
-          <h3 class="my-2">A.M Shafayet E Jaman</h3>
-          <span class="clearfix">Bachelor of Science in C.S.E</span>
+        <div class="col card p-3 py-4">
+          <div class="text-center">
+            <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
+            <h3 class="my-2">A.M Shafayet E Jaman</h3>
+            <span class="clearfix">Bachelor of Science in C.S.E</span>
 
-          <div class="row mt-3 mb-3">
+            <div class="row mt-3 mb-3">
 
-            <div class="col-md-4">
-              <h5>Start</h5>
-              <span class="num">2:30 pm</span>
+              <div class="col-md-4">
+                <h5>Start</h5>
+                <span class="num">2:30 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>End</h5>
+                <span class="num">5:00 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>Hours</h5>
+                <span class="num">2.5</span>
+              </div>
+
             </div>
-            <div class="col-md-4">
-              <h5>End</h5>
-              <span class="num">5:00 pm</span>
+
+            <hr class="line">
+
+            <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
+            <div class="social-buttons mt-5">
+              <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
+              <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
+              <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
+              <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
             </div>
-            <div class="col-md-4">
-              <h5>Hours</h5>
-              <span class="num">2.5</span>
+
+            <div class="profile mt-5">
+
+              <button class="profile_button px-5">View profile</button>
+
             </div>
 
           </div>
-
-          <hr class="line">
-
-          <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
-          <div class="social-buttons mt-5">
-            <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
-            <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
-            <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
-            <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
-          </div>
-
-          <div class="profile mt-5">
-
-            <button class="profile_button px-5">View profile</button>
-
-          </div>
-
         </div>
+        <div class="col card p-3 py-4">
+          <div class="text-center">
+            <img src="./assets/img/static/profile.png" width="100" class="rounded-circle bg-white">
+            <h3 class="my-2">A.M Shafayet E Jaman</h3>
+            <span class="clearfix">Bachelor of Science in C.S.E</span>
+
+            <div class="row mt-3 mb-3">
+
+              <div class="col-md-4">
+                <h5>Start</h5>
+                <span class="num">2:30 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>End</h5>
+                <span class="num">5:00 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>Hours</h5>
+                <span class="num">2.5</span>
+              </div>
+
+            </div>
+
+            <hr class="line">
+
+            <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
+            <div class="social-buttons mt-5">
+              <button class="neo-button"><i class="facebook-icon lni lni-facebook-filled"></i> </button>
+              <button class="neo-button"><i class="linkedin-icon lni lni-linkedin-original"></i></button>
+              <button class="neo-button"><i class="youtube-icon lni lni-youtube fa-1x"></i> </button>
+              <button class="neo-button"><i class="twitter-icon lni lni-twitter-filled"></i> </button>
+            </div>
+
+            <div class="profile mt-5">
+
+              <button class="profile_button px-5">View profile</button>
+
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
+    </section>
 
-
-    </div>
 
   </section>
 
