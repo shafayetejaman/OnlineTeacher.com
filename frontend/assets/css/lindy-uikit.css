@@ -2549,3 +2549,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
   z-index: 1;
 }
+
+.teacher-card-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
