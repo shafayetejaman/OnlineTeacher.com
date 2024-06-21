@@ -2544,10 +2544,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 
 }
+@media only screen and (min-width: 1400px) {
 
-#searchButton {
-
-  z-index: 1;
+  .search-bar{
+  
+    width: 20vw;
+  }
 }
 
 .teacher-card-img {
