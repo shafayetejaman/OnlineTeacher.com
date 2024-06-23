@@ -2,4 +2,5 @@ from django.db import models
 
 # Create your models here.
 
-class Teacher(models.mo)
+class Teacher(models.Model):
+    
