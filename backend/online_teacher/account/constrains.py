@@ -1,5 +1,5 @@
 dayes=(
-    ("sa","sa"),
+    ("Sa","Sa"),
     ("su","su"),
     ("sm","sa"),
     ("sa","sa"),
