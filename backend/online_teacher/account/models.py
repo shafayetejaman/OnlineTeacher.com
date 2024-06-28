@@ -8,9 +8,6 @@ from .constrains import DAY_CHOICES
 class WeekDay(models.Model):
     day = models.CharField(choices=DAY_CHOICES, unique=True)
 
-    def __str__(self):
-        return f'{self.day}'
-
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
