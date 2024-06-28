@@ -2559,13 +2559,3 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   object-fit: cover;
 }
-@media (max-width: 576px) {
-    .navbar-toggler.custom-toggler {
-      color: white;
-      border-color: white;
-    }
-    
-    .navbar-toggler.custom-toggler .toggler-icon {
-      background-color: white;
-    }
-  }
