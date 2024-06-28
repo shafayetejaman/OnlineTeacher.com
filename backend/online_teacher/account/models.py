@@ -6,7 +6,7 @@ from .constrains import DAY_CHOICES
 
 
 class WeekDay(models.Model):
-    day = models.PositiveSmallIntegerField(choices=DAY_CHOICES, unique=True)
+    day = models.CharField(choices=DAY_CHOICES, unique=True)
 
     def __str__(self):
         return f'{self.day}'
