@@ -1,8 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
-from constrains import DAY_CHOICES
+from .constrains import DAY_CHOICES
 
 # Create your models here.
+
+
+class WeekDay(models.Model):
+    day = models.PositiveSmallIntegerField(choices=DAY_CHOICES, unique=True)
+
+    def __str__(self):
+        return self.get_day_display()
 
 
 class Teacher(models.Model):
