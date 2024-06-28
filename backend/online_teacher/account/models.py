@@ -9,9 +9,9 @@ class WeekDay(models.Model):
     day = models.PositiveSmallIntegerField(choices=DAY_CHOICES, unique=True)
 
     def __str__(self):
-        return self.get_day_display()
+        return f'{self.day}'
 
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
-    week_days_option = models.CharField(choices=DAY_CHOICES)
+    week_days_option = models.ManyToManyField(WeekDay)
