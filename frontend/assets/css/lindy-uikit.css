@@ -2559,3 +2559,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   object-fit: cover;
 }
+
+@media only screen and (min-width: 1400px) {
+
+ .bavbar-sub-menue-icon{
+  te
+ }
+}
