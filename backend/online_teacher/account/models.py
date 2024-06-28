@@ -9,7 +9,7 @@ class WeekDay(models.Model):
     day = models.IntegerField(choices=DAY_CHOICES, unique=True)
     
     def __str__(self):
-        return f"{self.get_day_display}"
+        return f"{self.get_day_display()}"
     
 
 
