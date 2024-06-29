@@ -20,10 +20,10 @@ class Teacher(models.Model):
     ending_hour = models.TimeField()
     total_hours = models.TimeField()
     description = models.TextField()
-    youtube = models.CharField(max_length=50, required=False)
-    facebook = models.CharField(max_length=50, required=False)
-    linkedin = models.CharField(max_length=50, required=False)
-    twitter = models.CharField(max_length=50, required=False)
+    youtube = models.CharField(max_length=50, blank=True,)
+    facebook = models.CharField(max_length=50, blank=True,)
+    linkedin = models.CharField(max_length=50, blank=True,)
+    twitter = models.CharField(max_length=50, blank=True,)
     img = models.ImageField(upload_to="uploads/")
 
 
@@ -31,5 +31,5 @@ class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
     current_class = models.CharField(max_length=50)
     description = models.TextField()
-    facebook = models.CharField(max_length=50, required=False)
+    facebook = models.CharField(max_length=50, blank=True,)
     img = models.ImageField(upload_to="uploads/")
