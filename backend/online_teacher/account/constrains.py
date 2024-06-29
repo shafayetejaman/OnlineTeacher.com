@@ -1,4 +1,3 @@
-
 SUNDAY = 1
 MONDAY = 2
 TUESDAY = 3
@@ -16,3 +15,7 @@ DAY_CHOICES = (
       (FRIDAY, 'Friday'),
       (SATURDAY, 'Saturday'),
   )
+
+QUALIFICATION=(
+    
+)
