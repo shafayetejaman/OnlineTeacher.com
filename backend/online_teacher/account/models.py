@@ -16,3 +16,4 @@ class WeekDay(models.Model):
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
     week_days_option = models.ManyToManyField(WeekDay)
+    
