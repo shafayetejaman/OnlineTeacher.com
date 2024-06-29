@@ -7,7 +7,7 @@ from .constrains import DAY_CHOICES, QUALIFICATION
 
 class WeekDay(models.Model):
     day = models.IntegerField(choices=DAY_CHOICES, unique=True)
-    
+
     def __str__(self):
         return f"{self.get_day_display()}"
 
@@ -20,7 +20,7 @@ class Teacher(models.Model):
     ending_hour = models.TimeField()
     total_hours = models.TimeField()
     description = models.TextField()
-    facebook = models.CharField(max_length=50)
-    facebook = models.CharField(max_length=50)
-    facebook = models.CharField(max_length=50)
-    facebook = models.CharField(max_length=50)
+    facebook = models.CharField(max_length=50, required=False)
+    youtube = models.CharField(max_length=50, required=False)
+    linkedin = models.CharField(max_length=50, required=False)
+    twitter = models.CharField(max_length=50, required=False)
