@@ -20,4 +20,7 @@ class Teacher(models.Model):
     ending_hour = models.TimeField()
     total_hours = models.TimeField()
     description = models.TextField()
-    facebook = models.h
+    facebook = models.CharField(max_length=50)
+    facebook = models.CharField(max_length=50)
+    facebook = models.CharField(max_length=50)
+    facebook = models.CharField(max_length=50)
