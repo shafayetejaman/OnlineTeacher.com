@@ -7,25 +7,31 @@ FRIDAY = 6
 SATURDAY = 7
 
 DAY_CHOICES = (
-      (SUNDAY, 'Sunday'),
-      (MONDAY, 'Monday'),
-      (TUESDAY, 'Tuesday'),
-      (WEDNESDAY, 'Wednesday'),
-      (THURSDAY, 'Thursday'),
-      (FRIDAY, 'Friday'),
-      (SATURDAY, 'Saturday'),
-  )
-SSC=10
-HSC=12
-CSE=13
-GRADE9=9
-GRADE11=11
-GRADE8=8
-GRADE7=7
-QUALIFICATION=(
-    (SSC,"SSC"),
-    (HSC,"HSC"),
-    (SSC,"SSC"),
-    (SSC,"SSC"),
-    (SSC,"SSC"),
+    (SUNDAY, "Sunday"),
+    (MONDAY, "Monday"),
+    (TUESDAY, "Tuesday"),
+    (WEDNESDAY, "Wednesday"),
+    (THURSDAY, "Thursday"),
+    (FRIDAY, "Friday"),
+    (SATURDAY, "Saturday"),
+)
+
+SSC = 10
+HSC = 12
+CSE = 13
+GRADE9 = 9
+GRADE11 = 11
+GRADE8 = 8
+GRADE7 = 7
+GRADE6 = 6
+
+QUALIFICATION = (
+    (SSC, "SSC"),
+    (HSC, "HSC"),
+    (CSE, "CSE"),
+    (GRADE9, "Class 9"),
+    (GRADE11, "Class 11"),
+    (GRADE8, "Class 8"),
+    (GRADE7, "Class 7"),
+    (GRADE6, "Class 6"),
 )
