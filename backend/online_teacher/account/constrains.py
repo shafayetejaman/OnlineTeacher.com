@@ -33,7 +33,7 @@ QUALIFICATION = (
     (CSE, "B.Sc in CSE"),
     (EEE, "B.Sc in EEE"),
     (BA, "BA"),
-    (MA, "B.Sc in EEE"),
+    (MA, "MA"),
     (GRADE9, "Class 9"),
     (GRADE11, "Class 11"),
     (GRADE8, "Class 8"),
