@@ -19,19 +19,22 @@ DAY_CHOICES = (
 SSC = 10
 HSC = 12
 CSE = 13
+EEE = 14
+BA = 15
+MA = 16
 GRADE9 = 9
 GRADE11 = 11
 GRADE8 = 8
-GRADE7 = 7
-GRADE6 = 6
+
 
 QUALIFICATION = (
     (SSC, "SSC"),
     (HSC, "HSC"),
-    (CSE, "CSE"),
+    (CSE, "B.Sc in CSE"),
+    (EEE, "B.Sc in EEE"),
+    (BA, "BA"),
+    (MA, "B.Sc in EEE"),
     (GRADE9, "Class 9"),
     (GRADE11, "Class 11"),
     (GRADE8, "Class 8"),
-    (GRADE7, "Class 7"),
-    (GRADE6, "Class 6"),
 )
