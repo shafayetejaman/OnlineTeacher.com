@@ -15,7 +15,17 @@ DAY_CHOICES = (
       (FRIDAY, 'Friday'),
       (SATURDAY, 'Saturday'),
   )
-
+SSC=10
+HSC=12
+CSE=13
+GRADE9=9
+GRADE11=11
+GRADE8=8
+GRADE7=7
 QUALIFICATION=(
-    
+    (SSC,"SSC"),
+    (HSC,"HSC"),
+    (SSC,"SSC"),
+    (SSC,"SSC"),
+    (SSC,"SSC"),
 )
