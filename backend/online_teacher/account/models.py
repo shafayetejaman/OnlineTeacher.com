@@ -24,3 +24,12 @@ class Teacher(models.Model):
     youtube = models.CharField(max_length=50, required=False)
     linkedin = models.CharField(max_length=50, required=False)
     twitter = models.CharField(max_length=50, required=False)
+
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
+    qualification = models.IntegerField(choices=QUALIFICATION)
+    starting_hour = models.TimeField()
+    ending_hour = models.TimeField()
+    total_hours = models.TimeField()
+    description = models.TextField()
+    
