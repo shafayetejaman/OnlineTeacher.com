@@ -13,7 +13,7 @@ class WeekDay(models.Model):
 
 
 class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="TeacherAccount")
     week_days_option = models.ManyToManyField(WeekDay)
     qualification = models.IntegerField(choices=QUALIFICATION)
     starting_hour = models.TimeField()
@@ -28,7 +28,7 @@ class Teacher(models.Model):
 
 
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="account")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="StudentAccount")
     current_class = models.CharField(max_length=50)
     description = models.TextField()
     facebook = models.CharField(max_length=50, blank=True, null=True)
