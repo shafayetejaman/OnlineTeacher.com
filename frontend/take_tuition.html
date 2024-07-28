@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Tuition</title>
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" class="">
+  <link rel="stylesheet" href="./assets/css/take_tuition.css" class="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .header-6 {
+      background-color: #2b2c30;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header header-6">
+    <div class="navbar-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand h5 text-primary" href="index.html">
+                OnlineTeacher.com
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                <div class="navbar-sub-menu-icon">
+
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </div>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                <ul id="nav6" class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll active text-decoration-none" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#feature">Filter</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#about">About</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#contact">Contact</a>
+                  </li>
+
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/login.html">
+                      Login
+                    </a>
+                  </li>
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/register.html">
+                      Signup
+                    </a>
+                  </li>
+                  <li class="logged nav-item">
+                    <a class="" href="./profile.html">
+                      <i class="lni lni-user"></i>
+                    </a>
+                  </li>
+
+                  <li class="logged nav-item">
+                    <a class="btn-outline-warning" href="" onclick="logout(event)">
+                      Logout
+                    </a>
+                  </li>
+
+                </ul>
+
+
+              </div>
+
+
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+  </header>
+
+  <div class="container">
+    <div class="row py-5 mt-4 align-items-center justify-content-center">
+
+      <div class="col-md-5 my-5 text-center">
+        <img src="./assets/img/static/tuition.png" alt="" class="static-img img-fluid mb-3">
+        <h3>Tuition Form</h3>
+      </div>
+
+
+      <div class="col-md-7 col-lg-6 ml-auto">
+        <form onsubmit="create_tuition(event)">
+          <div class="row">
+
+            <!-- type -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                  <i class="fa-solid fa-school"></i>
+                </span>
+              </div>
+              <select id="type" name="type" class="form-control custom-select bg-white border-left-0 border-md"
+                  required>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+                <option value="Batch">Batch</option>
+
+              </select>
+            </div>
+
+            <!-- Days -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white px-4 border-md border-right-0 subject-select">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </span>
+              </div>
+              <select id="week_days_option" name="week_days_option"
+                  class="form-control custom-select bg-white border-left-0 border-md" multiple required>
+                <!-- <option value="">Bangla</option>
+                <option value="">English</option> -->
+
+              </select>
+            </div>
+
+            <!-- time Address -->
+            <div class="input-group col-lg-12 mb-4 justify-content-between gap-5">
+              <div>
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white px-4 border-md">
+                    <i class="fa-solid fa-stopwatch me-2"></i> Start Time
+                  </span>
+                </div>
+                <input id="start-time" type="time" name="start-time" class="form-control bg-whi border-md" required>
+              </div>
+              <div>
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white px-4 border-md">
+                    <i class="fa-solid fa-stopwatch me-2"></i> End Time
+                  </span>
+                </div>
+                <input id="end-time" type="time" name="end-time" class="form-control bg-whi border-md" required>
+              </div>
+
+              <div class="total-time">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white px-4 border-md form-control">
+
+                    <h6 class="fw-bolder text-center">Total Hours</h6>
+                  </span>
+                </div>
+
+                <input id="total-hours" name="total-hours" class="hours form-control border-md" placeholder="HH:MM"
+                    autofocus required>
+              </div>
+
+            </div>
+
+            <!-- subjects -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white px-4 border-md border-right-0 subject-select">
+                  <i class="fa-solid fa-book"></i>
+                </span>
+              </div>
+              <select id="subjects" name="subjects"
+                  class="subject-select form-control custom-select bg-white border-left-0 border-md" multiple required>
+                <!-- <option value="">Bangla</option>
+                <option value="">English</option> -->
+
+              </select>
+            </div>
+
+            <!-- Description -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                <span class="text-area input-group-text bg-white px-4 border-md border-right-0" rows="3">
+                  <i class="fa-regular fa-address-card"></i>
+                </span>
+              </div>
+              <textarea class="form-control border-left-0 border-md" id="description" rows="3" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group col-lg-12 mx-auto mb-0">
+              <button class="btn btn-primary btn-block py-2 font-weight-bold" type="submit">Submit</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= footer style-4 start ========================= -->
+  <footer class="footer footer-style-4">
+    <div class="container">
+      <div class="widget-wrapper">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+              <div class="logo">
+                <a class="h4 text-primary text-decoration-none" href="./index.html">OnlineTeacher.com</a>
+              </div>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla
+                placerat amet
+                amet congue.</p>
+              <ul class="socials">
+                <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
+              <h6>Quick Link</h6>
+              <ul class="links">
+                <li> <a href="#0">Home</a> </li>
+                <li> <a href="#0">About</a> </li>
+                <li> <a href="#0">Service</a> </li>
+                <li> <a href="#0">Testimonial</a> </li>
+                <li> <a href="#0">Contact</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+              <h6>Services</h6>
+              <ul class="links">
+                <li> <a href="#0">Web Design</a> </li>
+                <li> <a href="#0">Web Development</a> </li>
+                <li> <a href="#0">Seo Optimization</a> </li>
+                <li> <a href="#0">Blog Writing</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+              <h6>Download App</h6>
+              <ul class="download-app">
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-apple"></i></span>
+                    <span class="text">Download on the <b>App Store</b> </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-play-store"></i></span>
+                    <span class="text">GET IT ON <b>Play Store</b> </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+        <p>Design and Developed by <a href="" rel="nofollow" target="_blank">A.M Shafayet E Jaman</a>
+          Built-with <a href="https://uideck.com" rel="nofollow" target="_blank">Lindy UI Kit</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+  <script src="assets/js/take_tuition.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+      </script>
+
+
+</body>
+
+</html>

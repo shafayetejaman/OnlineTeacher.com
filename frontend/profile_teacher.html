@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="./assets/css/profile.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" class="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+  <header class="header header-6">
+    <div class="navbar-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand h5 text-primary" href="index.html">
+                OnlineTeacher.com
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                <div class="navbar-sub-menu-icon">
+
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </div>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                <ul id="nav6" class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll active text-decoration-none" href="./index.html#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#feature">Filter</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="#about">About</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#contact">Contact</a>
+                  </li>
+
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/login.html">
+                      Login
+                    </a>
+                  </li>
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/register.html">
+                      Signup
+                    </a>
+                  </li>
+                  <li class="logged nav-item">
+                    <a class="" href="./profile.html">
+                      <i class="lni lni-user"></i>
+                    </a>
+                  </li>
+
+                  <li class="logged nav-item">
+                    <a class="btn-outline-warning" href="" onclick="logout(event)">
+                      Logout
+                    </a>
+                  </li>
+
+                </ul>
+
+
+              </div>
+
+
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+  </header>
+
+  <div class="container">
+    <div class="main-body my-5">
+
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card account-details">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center" id="img-card">
+                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="user-img"
+                  width="150">
+                <div class="mt-3">
+                  <h4>John Doe</h4>
+                  <p class="text-secondary mb-1">Full Stack Developer</p>
+                  <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                  <button class="btn btn-primary">Follow</button>
+                  <button class="btn btn-outline-primary">Message</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3 account-details p-1">
+            <ul class="list-group list-group-flush">
+
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" class="feather feather-github mr-2 icon-inline">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>Github</h6>
+                <span><a id="contact-github" class="user-links text-warning" target="__blank" href=""></a></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline">
+                    <path
+                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                    </path>
+                  </svg>Twitter</h6>
+                <span><a id="contact-twitter" class="user-links text-warning" target="__blank" href=""></a></span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" class="bi bi-linkedin me-2"
+                      viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                  </svg>LinkedIn
+                </h6>
+                <span><a id="contact-linkedin" class="user-links text-warning" target="__blank" href=""></a></span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                    </path>
+                  </svg>Facebook</h6>
+                <span><a id="contact-facebook" class="user-links text-warning" target="__blank" href=""></a></span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card account-details mb-3">
+            <div class="card-body" id="teacher-detail-card">
+              <!-- <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Full Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  Kenneth Valdez
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                  <a class="btn btn-info " target="__blank" href="./profile_edit.html">Edit</a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="card mb-3 account-details">
+            <div class="be-comment-block text-white">
+              <h1 class="comments-title fs-5 mb-4" id="comments-num"></h1>
+              <div id="comment-section-list">
+                <!-- <div class="be-comment">
+                    <div class="be-img-comment">
+                      <a href="blog-detail-2.html">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="be-ava-comment">
+                      </a>
+                    </div>
+                    <div class="be-comment-content">
+                      <span class="be-comment-name">
+                        <a href="blog-detail-2.html">Ravi Sah</a>
+                      </span>
+                      <span class="be-comment-time">
+                        <i class="fa fa-clock-o"></i>
+                        May 27, 2015 at 3:14am
+                      </span>
+                      <p class="be-comment-text">
+                        Pellentesque gravida tristique ultrices.
+                        Sed blandit varius mauris, vel volutpat urna hendrerit id.
+                        Curabitur rutrum dolor gravida turpis tristique efficitur.
+                      </p>
+                    </div>
+                  </div> -->
+
+              </div>
+              <div id="submit-comment">
+                <!-- <form class="form-block">
+                    <div class="row mt-5 text-center">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <textarea class="form-input" required placeholder="Your text"></textarea>
+                        </div>
+                        <a class="btn btn-primary pull-right text-white">submit</a>
+                      </div>
+  
+                    </div>
+                  </form> -->
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= footer style-4 start ========================= -->
+  <footer class="footer footer-style-4">
+    <div class="container">
+      <div class="widget-wrapper">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+              <div class="logo">
+                <a class="h4 text-primary text-decoration-none" href="./index.html">OnlineTeacher.com</a>
+              </div>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla
+                placerat amet
+                amet congue.</p>
+              <ul class="socials">
+                <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
+              <h6>Quick Link</h6>
+              <ul class="links">
+                <li> <a href="#0">Home</a> </li>
+                <li> <a href="#0">About</a> </li>
+                <li> <a href="#0">Service</a> </li>
+                <li> <a href="#0">Testimonial</a> </li>
+                <li> <a href="#0">Contact</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+              <h6>Services</h6>
+              <ul class="links">
+                <li> <a href="#0">Web Design</a> </li>
+                <li> <a href="#0">Web Development</a> </li>
+                <li> <a href="#0">Seo Optimization</a> </li>
+                <li> <a href="#0">Blog Writing</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+              <h6>Download App</h6>
+              <ul class="download-app">
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-apple"></i></span>
+                    <span class="text">Download on the <b>App Store</b> </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-play-store"></i></span>
+                    <span class="text">GET IT ON <b>Play Store</b> </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+        <p>Design and Developed by <a href="" rel="nofollow" target="_blank">A.M Shafayet E Jaman</a>
+          Built-with <a href="https://uideck.com" rel="nofollow" target="_blank">Lindy UI Kit</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+      </script>
+
+  <script src="assets/js/profile_teacher.js"></script>
+
+</body>
+
+</html>

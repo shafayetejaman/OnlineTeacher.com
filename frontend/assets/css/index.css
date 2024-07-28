@@ -1,0 +1,136 @@
+/* teacher details card section */
+
+.card {
+  color: #fff;
+  width: 350px;
+  border-radius: 10px;
+  background: linear-gradient(15deg, #0a64cb, #39a1d5);
+  box-shadow: 20px 20px 60px gray;
+  border: none;
+}
+
+.neo-button {
+  width: 40px;
+  height: 40px;
+  outline: 0 !important;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: linear-gradient(14deg, #8a9eef, #325f90);
+  box-shadow: inset 50px 50px 50px gray,
+
+}
+
+.num {
+
+  color: #eee !important;
+}
+
+.line {
+  color: #fff;
+}
+
+.neo-button:active {
+  border-radius: 50%;
+  background: #0948db;
+  box-shadow: 5px 5px 5px gray,
+}
+
+
+.profile_button {
+  color: #fff;
+  padding: 10px;
+  border: none;
+  outline: 0 !important;
+  border-radius: 50px;
+  background: #0e4ea3;
+}
+
+.profile_button:active {
+  border-radius: 50%;
+  background: #6196ff;
+  box-shadow: 50px 50px 50px gray,
+}
+
+.circle-btn {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------filtering------------------- */
+
+.filter-color {
+  background-color: #36373a;
+  color: #2F80ED;
+}
+
+/* time input */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+
+}
+
+@media (min-width: 1400px) {
+
+  .search-bar {
+
+    width: 20vw;
+  }
+}
+
+.teacher-card-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#loading-spinner {
+  width: 180px;
+  animation: rotate 2s linear infinite;
+}
+
+
+@keyframes rotate {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.multiple-select {
+  height: 150px;
+}
+
+@media (max-width:990px) {
+  .filter-search {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #loading-spinner {
+    width: 130px;
+  }
+}
+
+@media (max-width:766px) and (min-width:567px) {
+
+  .search-icon {
+    margin-bottom: 10px;
+  }
+}
+
+.end-time {
+  margin-right: 45px !important;
+}

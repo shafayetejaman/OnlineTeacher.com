@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="./assets/css/profile.css" class="">
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" class="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+  <header class="header header-6">
+    <div class="navbar-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand h5 text-primary" href="index.html">
+                OnlineTeacher.com
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="navbar-sub-menu-icon">
+
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </div>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                <ul id="nav6" class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll active text-decoration-none" href="./index.html#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#feature">Filter</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="#about">About</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll text-decoration-none" href="./index.html#contact">Contact</a>
+                  </li>
+
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/login.html">
+                      Login
+                    </a>
+                  </li>
+                  <li class="not-logged nav-item">
+                    <a class="" href="./auth/register.html">
+                      Signup
+                    </a>
+                  </li>
+                  <li class="logged nav-item">
+                    <a class="" href="./profile.html">
+                      <i class="lni lni-user"></i>
+                    </a>
+                  </li>
+                  
+                  <li class="logged nav-item">
+                    <a class="btn-outline-warning" href="" onclick="logout(event)">
+                      Logout
+                    </a>
+                  </li>
+
+                </ul>
+
+
+              </div>
+
+
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+  </header>
+
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mt-3">
+          <div class="card account-details">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center" id="img-card">
+                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="user-img"
+                  width="150">
+                <div class="mt-3">
+                  <h4>John Doe</h4>
+                  <p class="text-secondary mb-1">Full Stack Developer</p>
+                  <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                  <button class="btn btn-primary">Follow</button>
+                  <button class="btn btn-outline-primary">Message</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 mt-3">
+          <div class="card account-details">
+            <div class="card-body" id="teacher-detail-card">
+              <!-- <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Full Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  Kenneth Valdez
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                  <a class="btn btn-info " target="__blank" href="./profile_edit.html">Edit</a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- table section -->
+  <div class="container table-container">
+    <div class="main-body">
+      <div class="row mb-5">
+        <div class="col-lg-12">
+          <div class="panel account-details">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col col-sm-3 col-xs-12">
+                  <h4 class="title">Tuition <span>List</span></h4>
+                </div>
+                <div class="col-sm-9 col-xs-12 text-right">
+                  <div class="btn_group">
+                    <input type="text" class="form-control" placeholder="Search" id="search-bar">
+                    <a id="search-btn" onclick="search_tuition()" class="btn btn-primary" role="button"><i class="fa fa-search"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Teacher Name</th>
+                    <th>Subjects</th>
+                    <th>status</th>
+                    <th>type</th>
+                    <th>Canceled</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="tuition-table">
+  
+                  <!-- <tr>
+                    <td>1</td>
+                    <td>Vincent Williamson</td>
+                    <td>31</td>
+                    <td>iOS Developer</td>
+                    <td>Sinaai-Waas</td>
+                    <td>
+                      <ul class="action-list">
+                        <li><a href="#" data-tip="Profile"><i class="fa fa-user-circle"></i></a></li>
+                        <li><a href="#" data-tip="cancel"><i class="fa-solid fa-xmark"></i></a></li>
+                      </ul>
+                    </td>
+                  </tr> -->
+  
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="panel-footer">
+                    <div class="row">
+                      <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                      <div class="col-sm-6 col-xs-6">
+                        <ul class="pagination hidden-xs pull-right">
+                          <li><a href="#">
+                              <</a> </li> <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">></a></li>
+                        </ul>
+                        <ul class="pagination visible-xs pull-right">
+                          <li><a href="#">
+                              <</a> </li> <li><a href="#">></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================= footer style-4 start ========================= -->
+  <footer class="footer footer-style-4">
+    <div class="container">
+      <div class="widget-wrapper">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+              <div class="logo">
+                <a class="h4 text-primary text-decoration-none" href="./index.html">OnlineTeacher.com</a>
+              </div>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla
+                placerat amet
+                amet congue.</p>
+              <ul class="socials">
+                <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
+              <h6>Quick Link</h6>
+              <ul class="links">
+                <li> <a href="#0">Home</a> </li>
+                <li> <a href="#0">About</a> </li>
+                <li> <a href="#0">Service</a> </li>
+                <li> <a href="#0">Testimonial</a> </li>
+                <li> <a href="#0">Contact</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+              <h6>Services</h6>
+              <ul class="links">
+                <li> <a href="#0">Web Design</a> </li>
+                <li> <a href="#0">Web Development</a> </li>
+                <li> <a href="#0">Seo Optimization</a> </li>
+                <li> <a href="#0">Blog Writing</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+              <h6>Download App</h6>
+              <ul class="download-app">
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-apple"></i></span>
+                    <span class="text">Download on the <b>App Store</b> </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-play-store"></i></span>
+                    <span class="text">GET IT ON <b>Play Store</b> </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+      <p>Design and Developed by <a href="" rel="nofollow" target="_blank">A.M Shafayet E Jaman</a>
+        Built-with <a href="https://uideck.com" rel="nofollow" target="_blank">Lindy UI Kit</a></p>
+    </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+  <script src="assets/js/profile_student.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

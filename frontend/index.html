@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>OnlineTeacher.com</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- ========================= CSS here ========================= -->
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+  <link rel="stylesheet" href="assets/css/index.css" class="">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+  <!-- ========================= preloader start ========================= -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="spinner">
+        <div class="spinner-container">
+          <div class="spinner-rotator">
+            <div class="spinner-left">
+              <div class="spinner-circle"></div>
+            </div>
+            <div class="spinner-right">
+              <div class="spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========================= preloader end ========================= -->
+
+  <!-- ========================= hero-section-wrapper-5 start ========================= -->
+  <section id="home" class="hero-section-wrapper-5">
+
+    <!-- ========================= header-6 start ========================= -->
+    <header class="header header-6">
+      <div class="navbar-area">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand h5 text-primary" href="index.html">
+                  OnlineTeacher.com
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                  <div class="navbar-sub-menu-icon">
+
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </div>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                  <ul id="nav6" class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#filter">Filter</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="not-logged nav-item">
+                      <a class="" href="./auth/login.html">
+                        Login
+                      </a>
+                    </li>
+                    <li class="not-logged nav-item">
+                      <a class="" href="./auth/register.html">
+                        Signup
+                      </a>
+                    </li>
+                    <li class="logged nav-item">
+                      <a class="" href="./profile.html">
+                        <i class="lni lni-user"></i>
+                      </a>
+                    </li>
+
+                    <li class="logged nav-item">
+                      <a class="btn-outline-warning" href="" onclick="logout(event)">
+                        Logout
+                      </a>
+                    </li>
+
+                  </ul>
+
+
+                </div>
+
+
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+    </header>
+    <!-- ========================= header-6 end ========================= -->
+
+    <!-- ========================= hero-5 start ========================= -->
+    <div class="hero-section hero-style-5 img-bg" style="background-image: url('assets/img/hero/hero-5/hero-bg.svg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hero-content-wrapper">
+              <h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Welcome to Our Online Tutoring Platform</h2>
+              <p class="mb-30 wow fadeInUp" data-wow-delay=".4s">Join our community to connect with qualified tutors for
+                personalized,
+                interactive learning sessions.</p>
+
+              <a href="#0" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">Get Started <i
+                    class="lni lni-chevron-right"></i> </a>
+            </div>
+          </div>
+          <div class="col-lg-6 align-self-end">
+            <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
+              <img src="assets/img/hero/hero-5/hero-img.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= hero-5 end ========================= -->
+
+  </section>
+  <!-- ========================= hero-section-wrapper-6 end ========================= -->
+
+
+
+  <!-- /* teacher details card section */ -->
+  <section class="mb-5 pb-5" id="filter">
+    <h3 class="text-center mt-5 fw-bolder text-primary">Filter<i class="lni lni-search"></i></h3>
+    <div class="filtering m-5 pb-5">
+
+      <div class="d-lg-flex justify-content-around">
+
+        <div class="btn-group-lg my-3 pe-2" role="group" id="week_days_option">
+          <h3 class="m-3">Days:</h3>
+          <!-- 
+          <input type="checkbox" class="btn-check" id="btncheck-su" autocomplete="off">
+          <label class="circle-btn btn btn-outline-primary filter-color rounded-circle fs-6 fw-bolder m-1"
+            for="btncheck-su">Su</label> -->
+
+
+        </div>
+
+        <div class="time-input mt-lg-3">
+          <div class="m-3 ms-2 me-0">
+
+            <label for="starting-hour" class="h4 my-2 me-4">Start time:</label>
+            <input type="time" id="starting-hour" name="starting-hour" value=""
+                class="ps-2 time-input h6 p-1 border-0 rounded-2 filter-color">
+          </div>
+          <div class="m-3 ms-2 me-0">
+
+            <label for="ending-hour" class="h4 my-2 end-time me-4">End time:</label>
+            <input type="time" id="ending-hour" name="ending-hour" value=""
+                class="ps-2 time-input h6 p-1 border-0 rounded-2 filter-color">
+          </div>
+        </div>
+      </div>
+      <!-- dropdown -->
+      <div class="filter-search d-flex justify-content-around mt-2">
+        <div class="multiple m-1">
+          <div class="sub-district m-1 my-4">
+            <label>
+              <h4 class="m-3 ms-0">Qualification:</h4>
+            </label>
+            <select class="sub-district-select rounded-2 p-2 filter-color h6 border-0" id="teacher-qualification"
+                onchange="load_teachers()">
+
+              <option value="" disabled selected>📑 All....</option>
+
+              <!-- <option value=" 1">SSC</option>
+                <option value="2">HSC</option>
+                <option value="3">B.Sc in CSE</option>
+                <option value="10">LLB</option> -->
+
+            </select>
+          </div>
+
+          <form class="form-inline d-md-flex">
+            <input class="form-control search-icon border-3" type="search" placeholder="Search Address / name"
+                aria-label="Search" id="search_bar">
+
+            <a onclick="load_teachers()" id="search-btn"
+                class="btn btn-outline-success btn-primary my-2 my-sm-0 text-white" type="submit"><i
+                  class="lni lni-search-alt"></i></a>
+          </form>
+        </div>
+
+        <div class="m-1 mt-4 ms-lg-0 ms-2">
+          <label>
+            <h4 class="m-3 ms-0">Subjects:</h4>
+          </label>
+          <select class="multiple-select rounded-2 p-2 filter-color h6 border-0" id="subjects" multiple>
+            <!-- <option value="Bangla">Bangla</option> -->
+
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- teacher cards -->
+    <section class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="./assets/img/static/data_not_found.jpg" alt="" class="w-50" id="no-data-img">
+        <img src="./assets/img/static/loadingspiner.svg" alt="" class="my-5" id="loading-spinner">
+        <!-- <div id="loading-spinner" class="mb-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="row row-cols-3 gap-5 justify-content-center" id="teacher-cards-div">
+        <!-- <div class="col card p-3 py-4">
+          <div class="text-center">
+            <img src="./assets/img/static/profile.png" class="teacher-card-img bg-white">
+            <h3 class="my-2">A.M Shafayet E Jaman</h3>
+            <span class="clearfix">Bachelor of Science in C.S.E</span>
+
+            <div class="row mt-3 mb-3">
+
+              <div class="col-md-4">
+                <h5>Start</h5>
+                <span class="num">2:30 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>End</h5>
+                <span class="num">5:00 pm</span>
+              </div>
+              <div class="col-md-4">
+                <h5>Hours</h5>
+                <span class="num">2:30</span>
+              </div>
+
+            </div>
+
+            <hr class="line">
+
+            <small class="mt-4">I am a backend developer working at google Inc at california,USA</small>
+            <a class="social-buttons mt-5">
+              <a href="" class="text-decoration-none"><button class="neo-button"><i
+                    class="facebook-icon lni lni-facebook-filled"></i></button></a>
+              <a href="" class="text-decoration-none"><button class="neo-button"><i
+                    class="linkedin-icon lni lni-linkedin-original"></i></button></a>
+              <a href="" class="text-decoration-none"><button class="neo-button"><i
+                    class="youtube-icon lni lni-youtube fa-1x"></i> </button></a>
+              <a href="" class="text-decoration-none"><button class="neo-button"><i
+                    class="twitter-icon lni lni-twitter-filled"></i> </button></a>
+          </div>
+
+          <div class="profile mt-5">
+
+            <button class="profile_button px-5">View profile</button>
+
+          </div>
+
+        </div>
+      </div> -->
+
+      </div>
+    </section>
+
+
+  </section>
+
+  <!-- ========================= about style-4 start ========================= -->
+  <section id="about" class="about-section about-style-4">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-xl-5 col-lg-6">
+          <div class="about-content-wrapper">
+            <div class="section-title mb-30">
+              <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of designing starts here</h3>
+              <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting time and money designing and managing a website
+                that doesn’t get results. Happiness guaranteed,</p>
+            </div>
+            <ul>
+              <li class="wow fadeInUp" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing a website that doesn’t get results.
+              </li>
+              <li class="wow fadeInUp" data-wow-delay=".4s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing.
+              </li>
+              <li class="wow fadeInUp" data-wow-delay=".45s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing a website that doesn’t get results.
+              </li>
+            </ul>
+            <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-6">
+          <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
+            <!-- <img src="assets/img/about/about-4/about-img.svg" alt=""> -->
+            <img src="./assets/img/static/teacher_teaching.jpg" class="img-teacher-teaching" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= about style-4 end ========================= -->
+
+  <!-- ========================= pricing style-4 start ========================= -->
+  <section id="pricing" class="pricing-section pricing-style-4 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-5 col-lg-6">
+          <div class="section-title mb-60">
+            <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Pricing Plan</h3>
+            <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website
+              that doesn’t get results. Happiness guaranteed!Stop wasting time and money designing and managing a
+              website that doesn’t get results. Happiness guaranteed!</p>
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-6">
+          <div class="pricing-active-wrapper wow fadeInUp" data-wow-delay=".4s">
+            <div class="pricing-active">
+
+              <div class="single-pricing-wrapper">
+                <div class="single-pricing">
+                  <h6>Basic Design</h6>
+                  <h4>Web Design</h4>
+                  <h3>$ 29.00</h3>
+                  <ul>
+                    <li>Carefully crafted components</li>
+                    <li>Amazing page examples</li>
+                    <li>Super friendly support team</li>
+                    <li>Awesome Support</li>
+                  </ul>
+                  <a href="#0" class="button radius-30">Get Started</a>
+                </div>
+              </div>
+              <div class="single-pricing-wrapper">
+                <div class="single-pricing">
+                  <h6>Basic Design</h6>
+                  <h4>Web Design</h4>
+                  <h3>$ 29.00</h3>
+                  <ul>
+                    <li>Carefully crafted components</li>
+                    <li>Amazing page examples</li>
+                    <li>Super friendly support team</li>
+                    <li>Awesome Support</li>
+                  </ul>
+                  <a href="#0" class="button radius-30">Get Started</a>
+                </div>
+              </div>
+              <div class="single-pricing-wrapper">
+                <div class="single-pricing">
+                  <h6>Basic Design</h6>
+                  <h4>Web Design</h4>
+                  <h3>$ 29.00</h3>
+                  <ul>
+                    <li>Carefully crafted components</li>
+                    <li>Amazing page examples</li>
+                    <li>Super friendly support team</li>
+                    <li>Awesome Support</li>
+                  </ul>
+                  <a href="#0" class="button radius-30">Get Started</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= pricing style-4 end ========================= -->
+
+  <!-- ========================= contact-style-3 start ========================= -->
+  <section id="contact" class="contact-section contact-style-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
+          <div class="section-title text-center mb-50">
+            <h3 class="mb-15">Get in touch</h3>
+            <p>Stop wasting time and money designing and managing a website that doesn’t get results. Happiness
+              guaranteed!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="contact-form-wrapper">
+            <form action="" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="single-input">
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Name">
+                    <i class="lni lni-user"></i>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="single-input">
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Email">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="single-input">
+                    <input type="text" id="number" name="number" class="form-input" placeholder="Number">
+                    <i class="lni lni-phone"></i>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="single-input">
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject">
+                    <i class="lni lni-text-format"></i>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="single-input">
+                    <textarea name="message" id="message" class="form-input" placeholder="Message" rows="6"></textarea>
+                    <i class="lni lni-comments-alt"></i>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-button">
+                    <button type="submit" class="button"> <i class="lni lni-telegram-original"></i> Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4">
+          <div class="left-wrapper">
+            <div class="row">
+              <div class="col-lg-12 col-md-6">
+                <div class="single-item">
+                  <div class="icon">
+                    <i class="lni lni-phone"></i>
+                  </div>
+                  <div class="text">
+                    <p>0045939863784</p>
+                    <p>+004389478327</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-6">
+                <div class="single-item">
+                  <div class="icon">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                  <div class="text">
+                    <p>yourmail@gmail.com</p>
+                    <p>admin@yourwebsite.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-6">
+                <div class="single-item">
+                  <div class="icon">
+                    <i class="lni lni-map-marker"></i>
+                  </div>
+                  <div class="text">
+                    <p>John's House, 13/5 Road, Sidny United State Of America</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= contact-style-3 end ========================= -->
+
+
+  <!-- ========================= footer style-4 start ========================= -->
+  <footer class="footer footer-style-4">
+    <div class="container">
+      <div class="widget-wrapper">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+              <div class="logo">
+                <a class="h4 text-primary" href="#0">OnlineTeacher.com</a>
+              </div>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla placerat amet
+                amet congue.</p>
+              <ul class="socials">
+                <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
+              <h6>Quick Link</h6>
+              <ul class="links">
+                <li> <a href="#0">Home</a> </li>
+                <li> <a href="#0">About</a> </li>
+                <li> <a href="#0">Service</a> </li>
+                <li> <a href="#0">Testimonial</a> </li>
+                <li> <a href="#0">Contact</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+              <h6>Services</h6>
+              <ul class="links">
+                <li> <a href="#0">Web Design</a> </li>
+                <li> <a href="#0">Web Development</a> </li>
+                <li> <a href="#0">Seo Optimization</a> </li>
+                <li> <a href="#0">Blog Writing</a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+              <h6>Download App</h6>
+              <ul class="download-app">
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-apple"></i></span>
+                    <span class="text">Download on the <b>App Store</b> </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#0">
+                    <span class="icon"><i class="lni lni-play-store"></i></span>
+                    <span class="text">GET IT ON <b>Play Store</b> </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+        <p>Design and Developed by <a href="" rel="nofollow" target="_blank">A.M Shafayet E Jaman</a>
+          Built-with <a href="https://uideck.com" rel="nofollow" target="_blank">Lindy UI Kit</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========================= footer style-4 end ========================= -->
+
+  <!-- ========================= scroll-top start ========================= -->
+  <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+  <!-- ========================= scroll-top end ========================= -->
+
+
+  <!-- ========================= JS here ========================= -->
+  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+  <script src="assets/js/tiny-slider.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+      </script>
+
+
+</body>
+
+</html>
