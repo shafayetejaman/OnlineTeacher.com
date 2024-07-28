@@ -9,9 +9,9 @@ class TeacherSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     def to_representation(self, instance):
-        self.fields["week_days_option"] = serializers.StringRelatedField(many=True)
-        self.fields["subjects"] = serializers.StringRelatedField(many=True)
-        self.fields["qualification"] = serializers.StringRelatedField(many=False)
+        self.fields["week_days_option"] = WeekDaySerializer(read_only=True, many=True)
+        self.fields["subjects"] = SubjectsSerializer(read_only=True, many=True)
+        self.fields["qualification"] = QualificationsSerializer(read_only=True)
         self.fields["user"] = ShowUserSerializer(read_only=True)
         return super(TeacherSerializer, self).to_representation(instance)
 

@@ -95,8 +95,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                   width="150">
             <div class="mt-3">
               <h4 class="text-warning">${teacher.user.username}</h4>
-              <p class="text-white mb-1">${teacher.qualification}</p>
-              <p class="text-white font-size-sm my-2 mb-3">${teacher.description}</p>
+              <p class="text-white my-3">${teacher.description}</p>
               <a class="btn btn-info text-white">Follow</a>
               <a class="btn btn-outline-success" target="__blank" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${teacher.user.email}">Message</a>
             </div>
@@ -164,7 +163,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Qualification</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.qualification}
+                ${teacher.qualification.name}
               </div>
             </div>
             <hr class="text-white">
@@ -173,7 +172,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Subjects</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.subjects.map(sub => `<h3 class='btn btn-info'>${sub}</h3>`).join(" ")}
+                ${teacher.subjects.map(sub => `<h3 class='btn btn-info'>${sub.name}</h3>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">
@@ -182,7 +181,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Available Days</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.week_days_option.map(sub => `<h3 class='btn btn-success'>${sub}</h3>`).join(" ")}
+                ${teacher.week_days_option.map(day => `<h3 class='btn btn-success'>${day.name}</h3>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">

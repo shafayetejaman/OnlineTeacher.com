@@ -78,8 +78,8 @@ const display_profile = async (student, user_id) =>
                   width="150">
             <div class="mt-3">
               <h4 class="text-warning">${student.user.username}</h4>
-              <p class="text-white">Educational level: ${student.current_class}</p>
-              <p class="student-card-description text-white font-size-sm pb-lg-2">${student.description}</p>
+              <p class="text-white fs-6">Educational level: ${student.current_class}</p>
+              <p class="student-card-description text-white pb-lg-2">${student.description}</p>
               <a class="btn btn-info" target="__blank" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${student.user.email}">Message</a>
             </div>
 

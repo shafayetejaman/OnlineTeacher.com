@@ -219,8 +219,8 @@ async function load_page()
         const form = new FormData();
         form.append("file", event.target.files[0]);
         
-        await fetch(`https://cors-anywhere.herokuapp.com/https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
-            
+        await fetch(`https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
+            mode:"no-cors",
             method: 'POST',
             body: form
 

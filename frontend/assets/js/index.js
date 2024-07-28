@@ -138,7 +138,7 @@ const display_teacher_cards = (data) =>
           <div class="text-center">
             <img src="${teacher.img}" class="teacher-card-img bg-white">
             <h4 class="mt-4 mb-3">${teacher.user.first_name + " " + teacher.user.last_name}</h4>
-            <span class="clearfix">Qualification: ${teacher.qualification}</span>
+            <span class="clearfix">Qualification: ${teacher.qualification.name}</span>
 
             <div class="row mt-3 gap-2 gap-lg-0">
 

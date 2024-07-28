@@ -174,16 +174,16 @@ function display_user_profile(teacher)
     document.getElementById("twitter").value = teacher.twitter;
     document.getElementById("qualification").select = teacher.qualification;
 
-    // TODO selecting all the subjects for the teacher
-    teacher.subjects.map(sub =>
+    // selecting all the subjects for the teacher
+    teacher.subjects.forEach(sub =>
     {
-        document.getElementById('subjects').check = sub;
+        document.querySelector(`#subjects option[value="${sub.id}"]`).selected = true;
     });
 
-    // TODO selecting all the subjects for the teacher
-    teacher.week_days_option.map(sub =>
+    // selecting all the subjects for the teacher
+    teacher.week_days_option.map(day =>
     {
-        document.getElementById('subjects').check = sub;
+        document.querySelector(`#week_days_option option[value="${day.id}"]`).selected = true;
     });
 }
 
@@ -344,9 +344,10 @@ async function load_page()
         const form = new FormData();
         form.append("file", event.target.files[0]);
 
-        await fetch(`https://cors-anywhere.herokuapp.com/https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
-
+        await fetch(`https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
+            mode:"no-cors",
             method: 'POST',
+            Authorization:`api_key ${imghippo_api_key}`,
             body: form
 
         }).then(res => res.json())
