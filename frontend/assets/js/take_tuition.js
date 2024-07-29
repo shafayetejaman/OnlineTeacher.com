@@ -146,19 +146,20 @@ const create_tuition = async (event) =>
     window.location.href = "profile.html";
 };
 
-const get_account_id = async (teacher_id, student_id) =>
+const get_account_id = async (teacher_user_id, student_user_id) =>
 {
+    console.log({teacher_user_id,student_user_id})
 
     let teacher, student = null;
 
-    let url = `${URL}/accounts/teacher-list/?user__id=${teacher_id}`;
+    let url = `${URL}/accounts/teacher-list/?user__id=${teacher_user_id}`;
 
     await fetch(url)
         .then(res => res.json())
         .then(data => teacher = data[0].id)
         .catch(err => console.error(err));
 
-    url = `${URL}/accounts/student-list/?user__id=${student_id}`;
+    url = `${URL}/accounts/student-list/?user__id=${student_user_id}`;
 
     await fetch(url)
         .then(res => res.json())

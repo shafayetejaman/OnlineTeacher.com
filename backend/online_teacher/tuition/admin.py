@@ -20,7 +20,7 @@ class TuitionModelAdmin(admin.ModelAdmin):
         obj.save()
         form.save_m2m()
 
-        if obj.status == "Ongoing" and not obj.canceled and obj.type == "Online":
+        if obj.status == "Ongoing" and not obj.canceled:
             subject = "Tuition notification email"
             send_email(
                 email_subject=subject,
@@ -28,7 +28,7 @@ class TuitionModelAdmin(admin.ModelAdmin):
                     "student": obj.student.user,
                     "link": FRONTEND_ADDRESS
                     + "/profile_student.html?user_id="
-                    + obj.student.user.id,
+                    + str(obj.student.user.id),
                     "year": datetime.now().year,
                 },
                 receiver_email=obj.student.user.email,

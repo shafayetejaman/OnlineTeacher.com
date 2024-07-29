@@ -84,7 +84,7 @@ function to_12_hour_format(time)
 }
 
 
-const display_profile = (teacher, user_id, is_owner) =>
+const display_profile = async (teacher, user_id, is_owner) =>
 {
   console.log(teacher);
 
@@ -172,7 +172,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Subjects</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.subjects.map(sub => `<h3 class='btn btn-info'>${sub.name}</h3>`).join(" ")}
+                ${teacher.subjects.map(sub => `<div class='btn btn-info'>${sub.name}</div>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">
@@ -181,7 +181,7 @@ const display_profile = (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Available Days</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.week_days_option.map(day => `<h3 class='btn btn-success'>${day.name}</h3>`).join(" ")}
+                ${teacher.week_days_option.map(day => `<div class='btn btn-success'>${day.name}</div>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">
@@ -214,20 +214,33 @@ const display_profile = (teacher, user_id, is_owner) =>
                     <a class="btn btn-info" href="./teacher_profile_edit.html">Edit</a>
                 </div>
               </div>
-              `: `
+              ` : await is_student() ? `
               <hr class="text-white">
               <div class="row">
                 <div class="col-sm-12">
                     <a class="btn btn-info" href="./take_tuition.html?user_id=${user_id}">Take Tuition</a>
                 </div>
-              </div>
-
-            `}
+              </div>`: ""}
         `);
 
 
   display_comments(user_id, is_owner);
 };
+
+async function is_student()
+{
+  const student_user_id = localStorage.getItem("user_id");
+  const url = `${URL}/accounts/student-list/?id=${student_user_id}`;
+  let student = null;
+
+  await fetch(url)
+    .then(res => res.json())
+    .then(stu => student = stu)
+    .catch(err => console.error(err));
+
+  return student?.length > 0;
+
+}
 
 const load_comments = async (user_id) =>
 {
@@ -271,9 +284,9 @@ const display_comments = async (user_id, is_owner) =>
 
     fetch(url)
       .then(res => res.json())
-      .then(student =>
+      .then(stu =>
       {
-        student = student[0];
+        student = stu[0];
 
         parent.insertAdjacentHTML("beforeend", `
 
@@ -302,7 +315,7 @@ const display_comments = async (user_id, is_owner) =>
   });
 
 
-  if (!is_owner && is_logged())
+  if (!is_owner && is_logged() && await has_tuition(user_id))
   {
 
     const parent = document.getElementById("submit-comment");
@@ -336,7 +349,34 @@ const display_comments = async (user_id, is_owner) =>
 
 };
 
-const submit_comment = async (event) =>
+// only ongoing or completed tuition students can comment
+async function has_tuition(teacher_id)
+{
+  const student_id = localStorage.getItem("user_id");
+  const url = `${URL}/tuition/tuition-list/?student__user__id=${student_id}&teacher__user__id=${teacher_id}`;
+  let tuition = null;
+  let ongoing = false;
+
+  await fetch(url)
+    .then(res => res.json())
+    .then(tui => tuition = tui)
+    .catch(err => console.error(err));
+
+  console.log(tuition);
+
+  tuition.forEach(tui =>
+  {
+    if (tui.status == "Ongoing")
+    {
+      ongoing = true;
+      return;
+    }
+  });
+
+  return ongoing;
+}
+
+async function submit_comment(event)
 {
   event.preventDefault();
 

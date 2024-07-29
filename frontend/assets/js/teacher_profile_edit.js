@@ -2,7 +2,9 @@
 // console.log(URLo)
 
 const URL = "http://127.0.0.1:8000";
-const imghippo_api_key = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
+const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
+const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
+const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
 
 let Teacher = null;
 let UploadImg = null;
@@ -248,7 +250,7 @@ function update_teacher(event)
 
     const info = {
         user: user_id,
-        img: UploadImg ? UploadImg : (Teacher ? Teacher.img : "https://i.imghippo.com/files/I9WYK1721756674.png"),
+        img: UploadImg ? UploadImg : (Teacher ? Teacher.img : DEFAULT_IMG),
         phone_number,
         description,
         address,
@@ -344,10 +346,11 @@ async function load_page()
         const form = new FormData();
         form.append("file", event.target.files[0]);
 
-        await fetch(`https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
-            mode:"no-cors",
+        await fetch(`https://proxy.cors.sh/https://www.imghippo.com/v1/upload?api_key=${IMG_HIPPO_API_KEY}`, {
             method: 'POST',
-            Authorization:`api_key ${imghippo_api_key}`,
+            headers: {
+                'x-cors-api-key': PROXY_CORE_API_KEY
+            },
             body: form
 
         }).then(res => res.json())

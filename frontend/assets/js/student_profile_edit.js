@@ -2,7 +2,9 @@
 // console.log(URLo)
 
 const URL = "http://127.0.0.1:8000";
-const imghippo_api_key = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
+const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
+const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
+const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
 
 let Student = null;
 let UploadImg = null;
@@ -135,7 +137,7 @@ function update_student(event)
 
     const info = {
         user: user_id,
-        img: UploadImg ? UploadImg : (Student ? Student.img : "https://i.imghippo.com/files/I9WYK1721756674.png"),
+        img: UploadImg ? UploadImg : (Student ? Student.img : DEFAULT_IMG),
         phone_number,
         current_class,
         description,
@@ -215,24 +217,26 @@ async function load_page()
     {
         document.querySelector(".save-profile-btn").style.display = "none";
         document.querySelector(".loading-line").style.display = "block";
-        
+
         const form = new FormData();
         form.append("file", event.target.files[0]);
-        
-        await fetch(`https://www.imghippo.com/v1/upload?api_key=${imghippo_api_key}`, {
-            mode:"no-cors",
+
+        await fetch(`https://proxy.cors.sh/https://www.imghippo.com/v1/upload?api_key=${IMG_HIPPO_API_KEY}`, {
             method: 'POST',
+            headers: {
+                'x-cors-api-key': PROXY_CORE_API_KEY
+            },
             body: form
 
         }).then(res => res.json())
-        .then(data =>
+            .then(data =>
             {
                 console.log(data);
                 UploadImg = data.data.view_url;
             })
             .catch(err => console.error(err));
-            
-            document.querySelector(".loading-line").style.display = "none";
+
+        document.querySelector(".loading-line").style.display = "none";
         document.querySelector(".save-profile-btn").style.display = "block";
 
     });
