@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000";
+const URL = "https://main--online-teacher-com.netlify.app";
 
 
 function is_logged()
@@ -148,7 +148,7 @@ const create_tuition = async (event) =>
 
 const get_account_id = async (teacher_user_id, student_user_id) =>
 {
-    console.log({teacher_user_id,student_user_id})
+    console.log({ teacher_user_id, student_user_id });
 
     let teacher, student = null;
 

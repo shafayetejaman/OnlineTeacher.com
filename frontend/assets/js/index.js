@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000";
+const URL = "https://main--online-teacher-com.netlify.app";
 
 const load_teachers = () =>
 {
