@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 BACKEND_ADDRESS = "https://onlineteacher-com.onrender.com"
-FRONTEND_ADDRESS = "https://main--online-teacher-com.netlify.app"
+FRONTEND_ADDRESS = "https://online-teacher-com.netlify.app/"
 USER_DEFAULT_IMAGE = "https://i.imghippo.com/files/I9WYK1721756674.png"
 
 CSRF_TRUSTED_ORIGINS = [
