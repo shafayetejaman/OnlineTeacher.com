@@ -20,7 +20,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet" />
 	
     <!--<![endif]-->
-	<title>Email Template</title>
+	<title>Email</title>
 	<!--[if gte mso 9]>
 	<style type="text/css" media="all">
 		sup { font-size: 100% !important; }
@@ -69,6 +69,8 @@
 			.column-empty2 { padding-bottom: 30px !important; }
 
 			.content-spacing { width: 15px !important; }
+
+			
 		}
 	</style>
 </head>
@@ -123,14 +125,28 @@
 																		<multiline>Welcome, {{user.first_name}}</multiline></td>
 																</tr>
 																<tr>
-																	<td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; padding-bottom:25px;"><multiline>Thank you for choosing our platform.<span class="m-hide"><br/></span>To activate our account please press the button</multiline></td>
+																	<td class="text-center pb25" style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; padding-bottom:25px;"><multiline>Thank you for chosing our platform.<span class="m-hide"><br/></span>To activate your account please press one of the button</multiline></td>
 																</tr>
 																<!-- Button -->
 																<tr>
 																	<td align="center">
 																		<table class="center" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
 																			<tr>
-																				<td class="pink-button text-button" style="background:#ff6666; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;"><multiline><a href="{{link}}" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;"><span class="link-white" style="color:#ffffff; text-decoration:none;">CLICK HERE</span></a></multiline></td>
+																				<td class="pink-button text-button" style="background:#ff6666; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;"><multiline><a href="{{link}}/1" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;"><span class="link-white" style="color:#ffffff; text-decoration:none;">AS ADMIN</span></a></multiline></td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
+
+																<tr>
+    															<td height="20"></td>
+																</tr>
+
+																<tr>
+																	<td align="center">
+																		<table class="center" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
+																			<tr>
+																				<td class="dark-blue-button2 text-button" style="background:#021a3d; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;"><multiline><a href="{{link}}/0" target="_blank" class="link" style="color:#66c7ff; text-decoration:none;"><span class="link" style="color:#66c7ff; text-decoration:none;">AS REGULAR USER</span></a></multiline></td>
 																			</tr>
 																		</table>
 																	</td>
@@ -146,8 +162,7 @@
 								</layout>
 								<!-- END Intro -->
 
-							
-
+						
 							
 								<!-- Article Secondary / Image On The Left - Copy On The Right -->
 								<layout label='Article Secondary / Image On The Left - Copy On The Right'>

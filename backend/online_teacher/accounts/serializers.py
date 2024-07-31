@@ -53,4 +53,13 @@ class ShowUserSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "email",
+            "is_superuser",
+        ]
+        read_only_fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "is_superuser",
         ]

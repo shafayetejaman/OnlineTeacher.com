@@ -1,4 +1,4 @@
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "http://127.0.0.1:8000";
 
 const is_logged = () =>
 {
@@ -34,64 +34,85 @@ function set_nav_btn()
     }
 }
 
-const load_profile_page = () =>
+const load_profile_page = async () =>
 {
-
     if (!is_logged())
     {
-        window.location.href = "index.html";
+        window.location.href = "./auth/login.html";
     }
     set_nav_btn();
 
     const user_id = localStorage.getItem("user_id");
-    console.log(user_id);
 
-    const url1 = `${URL}/accounts/teacher-list/?user__id=${user_id}`;
-    const url2 = `${URL}/accounts/student-list/?user__id=${user_id}`;
-
-    fetch(url1)
-        .then(res => res.json())
-        .then(data =>
-        {
-            if (!get_teacher_data(data))
-            {
-                fetch(url2)
-                    .then(res => res.json())
-                    .then(data => get_student_data(data))
-                    .catch(err => console.error(err));
-            }
-        })
-        .catch(err => console.error(err));
-};
-
-
-const get_teacher_data = (data) =>
-{
-
-    if (data?.length == 0)
+    if ((await is_admin(user_id)))
     {
-        return false;
+        window.location.href = "admin_panel.html";
     }
-
-    window.location.href = "profile_teacher.html";
-    return true;
-
-};
-
-
-const get_student_data = (data) =>
-{
-
-    if (data?.length == 0)
+    else if ((await get_teacher_data(user_id)))
     {
-        document.getElementById("select-account-section").style.display = "block";
+        window.location.href = "profile_teacher.html";
+    }
+    else if ((await get_student_data(user_id)))
+    {
+        window.location.href = "profile_student.html";
     }
     else
     {
-
-        window.location.href = "profile_student.html";
+        document.getElementById("select-account-section").style.display = "block";
     }
 };
+
+
+const get_teacher_data = async (user_id) =>
+{
+    let teacher = null;
+
+    const url = `${URL}/accounts/teacher-list/?user__id=${user_id}`;
+    await fetch(url)
+        .then(res => res.json())
+        .then(data => teacher = data)
+        .catch(err => console.error(err));
+
+    console.log("🚀 ~ teacher:", teacher);
+    return teacher?.length;
+};
+
+
+
+const is_admin = async (user_id) =>
+{
+    let is_superuser = false;
+
+    const url = `${URL}/accounts/user-list/?id=${user_id}`;
+
+    await fetch(url)
+        .then(res => res.json())
+        .then(data => is_superuser = data[0].is_superuser)
+        .catch(err => console.error(err));
+
+    console.log("🚀 ~ is_superuser:", is_superuser);
+
+    return is_superuser;
+};
+
+
+
+
+const get_student_data = async (user_id) =>
+{
+    let student = null;
+
+    const url = `${URL}/accounts/student-list/?user__id=${user_id}`;
+    await fetch(url)
+        .then(res => res.json())
+        .then(data => student = data)
+        .catch(err => console.error(err));
+
+    console.log("🚀 ~ student:", student);
+    return student?.length;
+};
+
+
 
 function logout(event)
 {

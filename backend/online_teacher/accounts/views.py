@@ -70,9 +70,6 @@ class ShowUserViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ["username", "id"]
 
-    def create(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_403_FORBIDDEN)
-
 
 class UpdateTeacherView(viewsets.generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]

@@ -32,9 +32,11 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-BACKEND_ADDRESS = "https://onlineteacher-com.onrender.com"
-FRONTEND_ADDRESS = "https://online-teacher-com.netlify.app/"
 USER_DEFAULT_IMAGE = "https://i.imghippo.com/files/I9WYK1721756674.png"
+BACKEND_ADDRESS = "http://127.0.0.1:8000"
+FRONTEND_ADDRESS = "http://127.0.0.1:3000/frontend"
+# BACKEND_ADDRESS = "https://onlineteacher-com.onrender.com"
+# FRONTEND_ADDRESS = "https://online-teacher-com.netlify.app/"
 
 CSRF_TRUSTED_ORIGINS = [
     BACKEND_ADDRESS,

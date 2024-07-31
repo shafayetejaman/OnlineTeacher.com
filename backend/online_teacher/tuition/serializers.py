@@ -6,6 +6,7 @@ from accounts.serializers import (
     SubjectsSerializer,
     WeekDaySerializer,
 )
+from django.contrib.auth.models import User
 
 
 class ReviewSerializer(serializers.ModelSerializer):
@@ -43,3 +44,23 @@ class CourseSerializer(serializers.ModelSerializer):
 
 class CancelTuitionSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=True)
+    user_id = serializers.IntegerField(required=True)
+
+
+class UpdateTuitionSerializer(serializers.ModelSerializer):
+    user_id = serializers.IntegerField(write_only=True, required=True)
+
+    class Meta:
+        model = Tuition
+        fields = "__all__"
+
+    def save(self, **kwargs):
+        user_id = self.validated_data.pop("user_id")
+        user = User.objects.get(id=user_id)
+
+        if user and user.is_superuser:
+            return super().save(**kwargs)
+        else:
+            raise serializers.ValidationError(
+                "Only admins are allowed to update tuitions!"
+            )

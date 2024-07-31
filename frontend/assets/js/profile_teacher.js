@@ -1,7 +1,7 @@
 // import {URLo} from "./template"
 // console.log(URLo)
 
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "http://127.0.0.1:8000";
 
 const is_logged = () =>
 {
@@ -30,11 +30,7 @@ const load_profile_data = () =>
 
   fetch(url)
     .then(res => res.json())
-    .then(data =>
-    {
-      console.log(data);
-      display_profile(data[0], user_id, is_owner);
-    })
+    .then(data => display_profile(data[0], user_id, is_owner))
     .catch(err => console.error(err));
 };
 

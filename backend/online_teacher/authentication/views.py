@@ -49,15 +49,19 @@ class RegistrationUserView(APIView):
         return Response(serializer.errors)
 
 
-def activation(request, uid, token):
+def activation(request, uid, token, is_admin):
     try:
         id = urlsafe_base64_decode(uid).decode()
         user = User._default_manager.get(pk=id)
     except User.DoesNotExist:
         user = None
 
+    if user and user.is_active:
+        return redirect(f"{FRONTEND_ADDRESS}/auth/login.html")
+
     if user and default_token_generator.check_token(user, token):
         user.is_active = True
+        user.is_superuser = is_admin
         user.save()
         return redirect(f"{FRONTEND_ADDRESS}/auth/login.html")
 
@@ -118,7 +122,7 @@ class changePasswordView(APIView):
             con_new_pass = serializer.validated_data.get("confirm_new_password")
 
             user = authenticate(request=request, username=username, password=password)
-            
+
             try:
                 validate_password(password=password, user=user)
             except:

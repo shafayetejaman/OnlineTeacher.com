@@ -17,10 +17,12 @@ class TuitionModelAdmin(admin.ModelAdmin):
         return obj.student.user.username
 
     def save_model(self, request, obj, form, change):
+        prev = Tuition.objects.get(id=obj.id).status
         obj.save()
         form.save_m2m()
 
-        if obj.status == "Ongoing" and not obj.canceled:
+        if obj.status == "Ongoing" and prev != "Ongoing" and not obj.canceled:
+
             subject = "Tuition notification email"
             send_email(
                 email_subject=subject,

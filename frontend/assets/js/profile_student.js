@@ -1,4 +1,4 @@
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "http://127.0.0.1:8000";
 
 const is_logged = () =>
 {
@@ -139,7 +139,7 @@ const display_profile = async (student, user_id) =>
 
 const load_tuitions = (user_id, search = "") =>
 {
-  let url = `${URL}/tuition/tuition-list/?student__user__id=${user_id}&search=${search}`;
+  const url = `${URL}/tuition/tuition-list/?student__user__id=${user_id}&search=${search}`;
 
   fetch(url)
     .then(res => res.json())
@@ -159,23 +159,21 @@ const load_tuitions = (user_id, search = "") =>
                 <td>${tuition.subjects.map(sub => sub.name).join(", ")}</td>
                 <td>${tuition.status}</td>
                 <td>${tuition.type}</td>
-                <td>${tuition.canceled ? '✅' : `
-                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
+                <td>${tuition.canceled ? '✅' : `<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
                   <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
-                    </svg>
-                    `}
-                    </td>
-                    <td>${tuition.created.slice(0, 10)}</td>
-                    <td>
+                    </svg>`}
+                </td>
+                <td>${tuition.created.slice(0, 10)}</td>
+                <td>
                     <ul class="action-list">
                     ${tuition.canceled ? '' : `
 
-                      <li><a href="" id="${tuition.id}" onclick="cancel_tuition(event,id)" data-tip="cancel"><i class="fa-solid fa-bucket"></i></a></li>
+                      <li><a href="" id="${tuition.id}" onclick="cancel_tuition(event,id)" data-tip="cancel"><i class="fa-solid fa-bucket text-warning"></i></a></li>
                     `}
 
 
                     </ul>
-                  </td>
+                </td>
                 </tr>
 
             `);
@@ -195,11 +193,14 @@ function search_tuition()
 async function cancel_tuition(event, id)
 {
   event.preventDefault();
-
-  if (!confirm("Do you really want to cancel you tuition?")) return;
+  if (!confirm("Do you really want to cancel your tuition?")) return;
 
   const url = `${URL}/tuition/cancel/`;
   const token = localStorage.getItem('token');
+  const info = {
+    id,
+    user_id: localStorage.getItem("user_id")
+  };
 
   fetch(url, {
     method: "POST",
@@ -207,7 +208,7 @@ async function cancel_tuition(event, id)
       Authorization: `Token ${token}`,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ id })
+    body: JSON.stringify(info)
 
   }).then(res => res.json())
     .then(data =>
@@ -217,7 +218,6 @@ async function cancel_tuition(event, id)
       window.location.reload();
 
     }).catch(err => console.error(err));
-
 }
 
 

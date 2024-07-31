@@ -1,4 +1,4 @@
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "http://127.0.0.1:8000";
 
 
 function is_logged()

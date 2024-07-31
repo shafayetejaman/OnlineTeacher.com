@@ -117,7 +117,7 @@
 
 
       <div class="col-md-7 col-lg-6 ml-auto">
-        <form onsubmit="create_tuition(event)">
+        <form onsubmit="update_tuition(event)">
           <div class="row">
 
             <!-- type -->
@@ -144,7 +144,7 @@
                 </span>
               </div>
               <select id="week_days_option" name="week_days_option"
-                  class="form-control custom-select bg-white border-left-0 border-md" multiple required autofocus>
+                  class="form-control custom-select bg-white border-left-0 border-md" autofocus multiple required>
                 <!-- <option value="">Bangla</option>
                 <option value="">English</option> -->
 
@@ -159,7 +159,7 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> Start Time
                   </span>
                 </div>
-                <input id="start-time" type="time" name="start-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="starting_hour" type="time" name="start-time" class="form-control bg-whi border-md" required autofocus>
               </div>
               <div>
                 <div class="input-group-prepend">
@@ -167,7 +167,7 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> End Time
                   </span>
                 </div>
-                <input id="end-time" type="time" name="end-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="ending_hour" type="time" name="end-time" class="form-control bg-whi border-md" required autofocus>
               </div>
 
               <div class="total-time">
@@ -178,7 +178,7 @@
                   </span>
                 </div>
 
-                <input id="total-hours" name="total-hours" class="hours form-control border-md" placeholder="HH:MM"
+                <input id="total_hours" name="total-hours" class="hours form-control border-md" placeholder="HH:MM"
                     autofocus required>
               </div>
 
@@ -206,7 +206,7 @@
                   <i class="fa-regular fa-address-card"></i>
                 </span>
               </div>
-              <textarea class="form-control border-left-0 border-md" id="description" rows="3" required autofocus></textarea>
+              <textarea class="form-control border-left-0 border-md" id="description" rows="3" autofocus required></textarea>
             </div>
 
             <!-- Submit Button -->
@@ -292,7 +292,7 @@
     </div>
   </footer>
   <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
-  <script src="assets/js/take_tuition.js"></script>
+  <script src="assets/js/tuition_edit.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
       </script>

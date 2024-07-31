@@ -185,10 +185,6 @@
    background-color: #2b2c30 !important;
  }
 
- .demo {
-   font-family: 'Noto Sans', sans-serif;
- }
-
  .panel {
    background: linear-gradient(to right, #2980b9, #274e75);
    border-radius: 5px;
@@ -206,7 +202,6 @@
  .panel .panel-heading .title {
    color: #fff;
    font-size: 28px;
-   font-weight: 500;
    text-transform: capitalize;
    line-height: 40px;
 

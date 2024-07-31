@@ -1,7 +1,7 @@
 // import {URLo} from "./template"
 // console.log(URLo)
 
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "http://127.0.0.1:8000";
 const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
 const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
 const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
