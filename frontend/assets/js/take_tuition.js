@@ -128,6 +128,9 @@ const create_tuition = async (event) =>
 
     console.log(info);
 
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
+
     const token = localStorage.getItem("token");
     url = `${URL}/tuition/tuition-list/`;
 

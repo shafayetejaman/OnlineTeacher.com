@@ -270,6 +270,8 @@ function update_teacher(event)
     };
 
     console.log(info);
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
     if (Teacher)
     {
@@ -340,8 +342,8 @@ async function load_page()
 
     file.addEventListener("change", async (event) =>
     {
-        document.querySelector(".save-profile-btn").style.display = "none";
-        document.querySelector(".loading-line").style.display = "block";
+        document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+        document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
         const form = new FormData();
         form.append("file", event.target.files[0]);
@@ -361,8 +363,8 @@ async function load_page()
             })
             .catch(err => console.error(err));
 
-        document.querySelector(".loading-line").style.display = "none";
-        document.querySelector(".save-profile-btn").style.display = "block";
+        document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+        document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
     });
 }
@@ -391,6 +393,9 @@ function change_password(event)
 
             console.log(info);
 
+            document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+            document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
+
             fetch(url, {
                 method: "POST",
                 headers: {
@@ -403,7 +408,7 @@ function change_password(event)
                 .then(data =>
                 {
                     console.log(data);
-                    logout(event);
+                    logout();
                 })
                 .catch(err => console.error(err));
         }

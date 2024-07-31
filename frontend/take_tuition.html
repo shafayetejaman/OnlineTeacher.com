@@ -127,8 +127,8 @@
                   <i class="fa-solid fa-school"></i>
                 </span>
               </div>
-              <select id="type" name="type" class="form-control custom-select bg-white border-left-0 border-md"
-                  required autofocus>
+              <select id="type" name="type" class="form-control custom-select bg-white border-left-0 border-md" required
+                  autofocus>
                 <option value="Online">Online</option>
                 <option value="Offline">Offline</option>
                 <option value="Batch">Batch</option>
@@ -159,7 +159,8 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> Start Time
                   </span>
                 </div>
-                <input id="start-time" type="time" name="start-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="start-time" type="time" name="start-time" class="form-control bg-whi border-md" required
+                    autofocus>
               </div>
               <div>
                 <div class="input-group-prepend">
@@ -167,7 +168,8 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> End Time
                   </span>
                 </div>
-                <input id="end-time" type="time" name="end-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="end-time" type="time" name="end-time" class="form-control bg-whi border-md" required
+                    autofocus>
               </div>
 
               <div class="total-time">
@@ -192,7 +194,8 @@
                 </span>
               </div>
               <select id="subjects" name="subjects"
-                  class="subject-select form-control custom-select bg-white border-left-0 border-md" multiple required autofocus>
+                  class="subject-select form-control custom-select bg-white border-left-0 border-md" multiple required
+                  autofocus>
                 <!-- <option value="">Bangla</option>
                 <option value="">English</option> -->
 
@@ -206,12 +209,21 @@
                   <i class="fa-regular fa-address-card"></i>
                 </span>
               </div>
-              <textarea class="form-control border-left-0 border-md" id="description" rows="3" required autofocus></textarea>
+              <textarea class="form-control border-left-0 border-md" id="description" rows="3" required
+                  autofocus></textarea>
             </div>
 
             <!-- Submit Button -->
-            <div class="form-group col-lg-12 mx-auto mb-0">
+            <div class="save-btn form-group col-lg-12 mx-auto mb-0">
               <button class="btn btn-primary btn-block py-2 font-weight-bold" type="submit">Submit</button>
+            </div>
+            <div class="loading-btn form-group col-lg-12 mx-auto mb-0">
+              <div class="loading-btn">
+                <button class="btn btn-primary" type="button" style="display: none;" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                </button>
+              </div>
             </div>
 
           </div>

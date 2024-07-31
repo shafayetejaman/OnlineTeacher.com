@@ -335,7 +335,13 @@ const display_comments = async (user_id, is_owner) =>
               
                 <textarea id="comment-text" class="form-input" required placeholder="Your text"></textarea>
               </div>
-              <a class="btn btn-info pull-right text-white" onclick="submit_comment(event)">submit</a>
+              <a class="save-btn btn btn-info pull-right text-white" onclick="submit_comment(event)">submit</a>
+              <div class="loading-btn btn btn-info pull-right" style="display:none;">
+                <button class="btn text-white" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                </button>
+              </div>
             </div>
           </div>
         </form>
@@ -382,6 +388,9 @@ async function submit_comment(event)
   let teacher = new URLSearchParams(window.location.search).get("user_id");
   let reviewer = localStorage.getItem("user_id");
   const token = localStorage.getItem("token");
+
+  document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+  document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
   let url = `${URL}/accounts/teacher-list/?user__id=${teacher}`;
 
