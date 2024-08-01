@@ -1,4 +1,5 @@
 const URL = "https://onlineteacher-com.onrender.com";
+// const URL = "http://127.0.0.1:8000"
 
 const is_logged = () =>
 {
@@ -59,8 +60,8 @@ const set_tuition_data = async (tuition_id) =>
             document.getElementById("description").value = tuition.description;
             document.getElementById("status").value = tuition.status;
             document.getElementById("type").value = tuition.type;
-            document.getElementById("student-account").value = tuition.student.user.id;
-            document.getElementById("teacher-account").value = tuition.teacher.user.id;
+            document.getElementById("student-account").value = tuition.student.id;
+            document.getElementById("teacher-account").value = tuition.teacher.id;
 
 
         })
@@ -111,7 +112,7 @@ const update_tuition = async (event) =>
 
     const id = new URLSearchParams(window.location.search).get("id");
     const token = localStorage.getItem('token');
-    let url = `${URL}/tuition/tuition-list`;
+    let url = `${URL}/tuition/tuition-list/`;
     let method = "POST";
 
     if (id)
@@ -120,8 +121,10 @@ const update_tuition = async (event) =>
         method = "PUT";
     }
 
+
+
     await fetch(url, {
-        method,
+        method: method,
         headers: {
             Authorization: `Token ${token}`,
             "Content-Type": "application/json"
@@ -132,7 +135,7 @@ const update_tuition = async (event) =>
         .then(data => console.log(data))
         .catch(err => console.error(err));
 
-    // window.location.href = "admin_panel.html";
+    window.location.href = "admin_panel.html";
 };
 
 
@@ -193,7 +196,7 @@ const load_page_data = async () =>
                 const parent = document.getElementById('student-account');
                 parent.insertAdjacentHTML('beforeend', `
 
-                    <option value="${student.user.id}">${student.user.username}</option>
+                    <option value="${student.id}">${student.user.username}</option>
                 `);
 
             });
@@ -212,7 +215,7 @@ const load_page_data = async () =>
                 const parent = document.getElementById('teacher-account');
                 parent.insertAdjacentHTML('beforeend', `
 
-                    <option value="${teacher.user.id}">${teacher.user.username}</option>
+                    <option value="${teacher.id}">${teacher.user.username}</option>
                 `);
 
             });
