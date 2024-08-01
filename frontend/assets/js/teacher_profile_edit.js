@@ -310,7 +310,7 @@ async function update_teacher(event)
 
     document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
     document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
-    window.location.href = "profile.html";
+    window.location.href = "profile_teacher.html";
 }
 
 

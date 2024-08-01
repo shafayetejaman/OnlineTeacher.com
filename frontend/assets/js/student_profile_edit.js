@@ -184,7 +184,7 @@ function update_student(event)
             .catch(err => console.error(err));
     }
 
-    window.location.href = "profile.html";
+    window.location.href = "profile_student.html";
 }
 
 

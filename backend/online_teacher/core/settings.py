@@ -40,6 +40,7 @@ FRONTEND_ADDRESS = "https://online-teacher-com.netlify.app/"
 
 CSRF_TRUSTED_ORIGINS = [
     BACKEND_ADDRESS,
+    FRONTEND_ADDRESS,   
     "https://*.127.0.0.1",
 ]
 CORS_ORIGIN_ALLOW_ALL = True

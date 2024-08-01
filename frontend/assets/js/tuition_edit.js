@@ -132,7 +132,7 @@ const update_tuition = async (event) =>
         .then(data => console.log(data))
         .catch(err => console.error(err));
 
-    window.location.href = "profile.html";
+    // window.location.href = "admin_panel.html";
 };
 
 
