@@ -360,8 +360,8 @@ async function load_page()
             })
             .catch(err => console.error(err));
 
-        document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
-        document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
+        document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
+        document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
 
     });
 }
