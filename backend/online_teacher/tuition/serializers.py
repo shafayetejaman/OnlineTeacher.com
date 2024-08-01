@@ -48,7 +48,7 @@ class CancelTuitionSerializer(serializers.Serializer):
 
 
 class UpdateTuitionSerializer(serializers.ModelSerializer):
-    user_id = serializers.IntegerField(write_only=True, required=True)
+    user_id = serializers.IntegerField(required=True)
 
     class Meta:
         model = Tuition
