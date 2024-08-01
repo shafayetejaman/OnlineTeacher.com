@@ -1,7 +1,7 @@
 // import {URLo} from "./template"
 // console.log(URLo)
 
-const URL = "https://onlineteacher-com.onrender.com";;
+const URL = "https://onlineteacher-com.onrender.com";
 const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
 const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
 const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
@@ -215,7 +215,7 @@ function is_valid_time(time)
     return regex.test(time);
 }
 
-function update_teacher(event)
+async function update_teacher(event)
 {
     event.preventDefault();
     const user_id = localStorage.getItem("user_id");
@@ -278,7 +278,7 @@ function update_teacher(event)
         const url = `${URL}/accounts/update-teacher/${Teacher.id}`;
         const token = localStorage.getItem("token");
 
-        fetch(url, {
+      await fetch(url, {
             method: "PUT",
             headers: {
                 Authorization: `Token ${token}`,
@@ -295,7 +295,7 @@ function update_teacher(event)
         const url = `${URL}/accounts/teacher-list/`;
         const token = localStorage.getItem("token");
 
-        fetch(url, {
+       await fetch(url, {
             method: "POST",
             headers: {
                 Authorization: `Token ${token}`,
@@ -308,6 +308,8 @@ function update_teacher(event)
             .catch(err => console.error(err));
     }
 
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
     window.location.href = "profile.html";
 }
 

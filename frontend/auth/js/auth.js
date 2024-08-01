@@ -37,7 +37,7 @@ const registration = async (event) =>
 
             const url = `${URL}/user-account/register/`;
 
-            fetch(url, {
+            await fetch(url, {
 
                 method: "POST",
                 headers: {
@@ -52,6 +52,9 @@ const registration = async (event) =>
                     console.log(data);
                 })
                 .catch(err => console.error(err));
+
+            document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
+            document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
 
         }
         else
@@ -115,7 +118,7 @@ function logout(event)
         .catch(err => console.error(err));
 }
 
-const login = (event) =>
+const login = async (event) =>
 {
     event.preventDefault();
     const username = get_value("login-name");
@@ -131,7 +134,7 @@ const login = (event) =>
 
     const url = `${URL}/user-account/login/`;
 
-    fetch(url, {
+    await fetch(url, {
 
         method: "POST",
         headers: {
@@ -161,6 +164,8 @@ const login = (event) =>
         })
         .catch(err => console.error(err));
 
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
 };
 
 
