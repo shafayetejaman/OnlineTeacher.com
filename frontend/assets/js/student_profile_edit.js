@@ -123,7 +123,7 @@ function set_user_data(id)
 
 }
 
-function update_student(event)
+async function update_student(event)
 {
     event.preventDefault();
     const user_id = localStorage.getItem("user_id");
@@ -149,12 +149,13 @@ function update_student(event)
     document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
     document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
+
     if (Student)
     {
         const url = `${URL}/accounts/update-student/${Student.id}`;
         const token = localStorage.getItem("token");
 
-        fetch(url, {
+        await fetch(url, {
             method: "PUT",
             headers: {
                 Authorization: `Token ${token}`,
@@ -171,7 +172,7 @@ function update_student(event)
         const url = `${URL}/accounts/student-list/`;
         const token = localStorage.getItem("token");
 
-        fetch(url, {
+        await fetch(url, {
             method: "POST",
             headers: {
                 Authorization: `Token ${token}`,
@@ -183,6 +184,9 @@ function update_student(event)
             .then(data => console.log(data))
             .catch(err => console.error(err));
     }
+
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
 
     window.location.href = "profile_student.html";
 }

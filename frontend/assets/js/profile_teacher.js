@@ -226,7 +226,7 @@ const display_profile = async (teacher, user_id, is_owner) =>
 async function is_student()
 {
   const student_user_id = localStorage.getItem("user_id");
-  const url = `${URL}/accounts/student-list/?id=${student_user_id}`;
+  const url = `${URL}/accounts/student-list/?user__id=${student_user_id}`;
   let student = null;
 
   await fetch(url)
