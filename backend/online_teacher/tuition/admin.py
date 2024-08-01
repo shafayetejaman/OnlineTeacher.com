@@ -29,8 +29,7 @@ class TuitionModelAdmin(admin.ModelAdmin):
                 context={
                     "student": obj.student.user,
                     "link": FRONTEND_ADDRESS
-                    + "/profile_student.html?user_id="
-                    + str(obj.student.user.id),
+                    + "/profile_student.html",
                     "year": datetime.now().year,
                 },
                 receiver_email=obj.student.user.email,

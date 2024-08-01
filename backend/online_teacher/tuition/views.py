@@ -82,16 +82,17 @@ class UpdateTuitionViewSet(viewsets.generics.UpdateAPIView):
     def perform_update(self, serializer):
         tuition = Tuition.objects.get(id=self.kwargs.get("pk"))
 
-        if tuition.status != "Ongoing" and serializer.validated_data.get("status") == "Ongoing":
+        if (
+            tuition.status != "Ongoing"
+            and serializer.validated_data.get("status") == "Ongoing"
+        ):
 
             subject = "Tuition notification email"
             send_email(
                 email_subject=subject,
                 context={
                     "student": tuition.student.user,
-                    "link": FRONTEND_ADDRESS
-                    + "/profile_student.html?user_id="
-                    + str(tuition.student.user.id),
+                    "link": FRONTEND_ADDRESS + "/profile_student.html",
                     "year": datetime.now().year,
                 },
                 receiver_email=tuition.student.user.email,

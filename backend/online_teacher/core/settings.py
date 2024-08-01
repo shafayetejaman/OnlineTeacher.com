@@ -43,13 +43,9 @@ CSRF_TRUSTED_ORIGINS = [
     FRONTEND_ADDRESS,
     "https://*.127.0.0.1",
 ]
-CSRF_TRUSTED_ORIGINS = [
-    "https://backend.example.com",
-    "https://frontend.example.com",
-    "https://*.127.0.0.1",
-]
 
 CORS_ORIGIN_ALLOW_ALL = False
+
 CORS_ORIGIN_WHITELIST = [
     "https://*.127.0.0.1",
     BACKEND_ADDRESS,
