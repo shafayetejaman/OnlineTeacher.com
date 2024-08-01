@@ -1,7 +1,7 @@
 // import {URLo} from "./template"
 // console.log(URLo)
 
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "https://onlineteacher-com.onrender.com";;
 
 const is_logged = () =>
 {

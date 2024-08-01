@@ -1,4 +1,4 @@
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "https://onlineteacher-com.onrender.com";;
 
 const registration = async (event) =>
 {
@@ -31,6 +31,9 @@ const registration = async (event) =>
 
         if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password))
         {
+
+            document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+            document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
             const url = `${URL}/user-account/register/`;
 
@@ -122,6 +125,9 @@ const login = (event) =>
         username,
         password
     });
+
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
     const url = `${URL}/user-account/login/`;
 

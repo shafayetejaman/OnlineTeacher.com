@@ -5,9 +5,9 @@ const is_logged = () =>
     return localStorage.getItem("token") && localStorage.getItem("user_id");
 };
 
-const load_edit_tuition_page = async () =>
+const load_page = async () =>
 {
-    document.title = "Admin Panel";
+    document.title = "edit_tuition";
 
     let is_admin = false;
     const user_id = localStorage.getItem("user_id");
@@ -25,31 +25,30 @@ const load_edit_tuition_page = async () =>
     }
 
     set_nav_btn();
-    load_data();
-    set_tuition_data();
+    await load_page_data();
+
+    const tuition_id = new URLSearchParams(window.location.search).get("id");
+    if (tuition_id) await set_tuition_data(tuition_id);
 };
 
-const set_tuition_data = () =>
-{
-    const tuition_id = new URLSearchParams(window.location.search).get("id");
 
+const set_tuition_data = async (tuition_id) =>
+{
     const url = `${URL}/tuition/tuition-list/?id=${tuition_id}`;
 
-    fetch(url)
+    await fetch(url)
         .then(res => res.json())
         .then(tuition =>
         {
             tuition = tuition[0];
             console.log("🚀 ~ tuition:", tuition);
 
-            document.querySelector("#type").value = tuition.type;
-
             tuition.subjects.forEach(sub =>
             {
                 document.querySelector(`#subjects option[value="${sub.id}"]`).selected = true;
             });
 
-            tuition.week_days_option.map(day =>
+            tuition.week_days_option.forEach(day =>
             {
                 document.querySelector(`#week_days_option option[value="${day.id}"]`).selected = true;
             });
@@ -58,6 +57,12 @@ const set_tuition_data = () =>
             document.getElementById("ending_hour").value = tuition.ending_hour;
             document.getElementById("total_hours").value = tuition.total_hours.slice(0, 5);
             document.getElementById("description").value = tuition.description;
+            document.getElementById("status").value = tuition.status;
+            document.getElementById("type").value = tuition.type;
+            document.getElementById("student-account").value = tuition.student.user.id;
+            document.getElementById("teacher-account").value = tuition.teacher.user.id;
+
+
         })
         .catch(err => console.error(err));
 };
@@ -77,6 +82,9 @@ const update_tuition = async (event) =>
     const ending_hour = get_value('ending_hour');
     const total_hours = get_value('total_hours');
     const description = get_value('description');
+    const status = get_value('status');
+    const student = get_value('student-account');
+    const teacher = get_value('teacher-account');
 
     let selected = document.querySelectorAll('#subjects option:checked');
     const subjects = Array.from(selected).map(sub => sub.value);
@@ -92,15 +100,28 @@ const update_tuition = async (event) =>
         total_hours,
         description,
         subjects,
+        status,
+        teacher,
+        student,
         user_id: localStorage.getItem("user_id")
     };
 
+    document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
+    document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
+
     const id = new URLSearchParams(window.location.search).get("id");
-    const url = `${URL}/tuition/update/${id}`;
     const token = localStorage.getItem('token');
+    let url = `${URL}/tuition/tuition-list`;
+    let method = "POST";
+
+    if (id)
+    {
+        url = `${URL}/tuition/update/${id}`;
+        method = "PUT";
+    }
 
     await fetch(url, {
-        method: "PATCH",
+        method,
         headers: {
             Authorization: `Token ${token}`,
             "Content-Type": "application/json"
@@ -115,19 +136,19 @@ const update_tuition = async (event) =>
 };
 
 
-const load_data = () =>
+const load_page_data = async () =>
 {
+    // subjects
     let url = `${URL}/accounts/subject-list/`;
 
-    fetch(url)
+    await fetch(url)
         .then(res => res.json())
         .then(data =>
         {
             console.log(data);
 
-            data.map(sub =>
+            data.forEach(sub =>
             {
-
                 const parent = document.getElementById('subjects');
                 parent.insertAdjacentHTML('beforeend', `
                 
@@ -141,15 +162,14 @@ const load_data = () =>
     // Available days
     url = `${URL}/accounts/day-list/`;
 
-    fetch(url)
+    await fetch(url)
         .then(res => res.json())
         .then(data =>
         {
             console.log(data);
 
-            data.map(day =>
+            data.forEach(day =>
             {
-
                 const parent = document.getElementById('week_days_option');
                 parent.insertAdjacentHTML('beforeend', `
                 
@@ -159,6 +179,46 @@ const load_data = () =>
             });
         })
         .catch(err => console.error(err));
+
+
+    // student account list
+    url = `${URL}/accounts/student-list/`;
+
+    await fetch(url)
+        .then(res => res.json())
+        .then(data =>
+        {
+            data.forEach(student =>
+            {
+                const parent = document.getElementById('student-account');
+                parent.insertAdjacentHTML('beforeend', `
+
+                    <option value="${student.user.id}">${student.user.username}</option>
+                `);
+
+            });
+        })
+        .catch(err => console.error(err));
+
+    // teacher account list
+    url = `${URL}/accounts/teacher-list/`;
+
+    await fetch(url)
+        .then(res => res.json())
+        .then(data =>
+        {
+            data.forEach(teacher =>
+            {
+                const parent = document.getElementById('teacher-account');
+                parent.insertAdjacentHTML('beforeend', `
+
+                    <option value="${teacher.user.id}">${teacher.user.username}</option>
+                `);
+
+            });
+        })
+        .catch(err => console.error(err));
+
 };
 
 
@@ -215,7 +275,8 @@ function logout(event)
             window.location.href = "./auth/login.html";
         })
         .catch(err => console.error(err));
+
 }
 
 
-load_edit_tuition_page();
+load_page();

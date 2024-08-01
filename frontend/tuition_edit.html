@@ -15,15 +15,7 @@
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    .header-6 {
-      background-color: #2b2c30;
-    }
 
-    a {
-      text-decoration: none !important;
-    }
-  </style>
 </head>
 
 <body>
@@ -118,7 +110,24 @@
 
       <div class="col-md-7 col-lg-6 ml-auto">
         <form onsubmit="update_tuition(event)">
-          <div class="row">
+          <div class="input-group col-lg-12">
+
+            <div class="row my-4 gap-lg-0 gap-3">
+              <!-- student account -->
+              <div class="col-lg-6">
+                <select id="student-account" name="student-account"
+                    class="form-control select-account bg-white border-md py-2" required autofocus>
+                  <option value="" disabled selected>👤️️󠀠󠀠󠀠󠀠ㅤStudent</option>
+                </select>
+              </div>
+              <!-- teacher account -->
+              <div class="col-lg-6">
+                <select id="teacher-account" name="teacher-account"
+                    class="form-control select-account bg-white border-md py-2" required autofocus>
+                  <option value="" disabled selected>👤󠀠ㅤTeacher</option>
+                </select>
+              </div>
+            </div>
 
             <!-- type -->
             <div class="input-group col-lg-12 mb-4">
@@ -127,11 +136,27 @@
                   <i class="fa-solid fa-school"></i>
                 </span>
               </div>
-              <select id="type" name="type" class="form-control custom-select bg-white border-left-0 border-md"
-                  required autofocus>
+              <select id="type" name="type" class="form-control custom-select bg-white border-left-0 border-md" required
+                  autofocus>
                 <option value="Online">Online</option>
                 <option value="Offline">Offline</option>
                 <option value="Batch">Batch</option>
+
+              </select>
+            </div>
+
+            <!-- status -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                  <i class="fa-solid fa-hourglass-half"></i>
+                </span>
+              </div>
+              <select id="status" name="status" class="form-control custom-select bg-white border-left-0 border-md"
+                  required autofocus>
+                <option value="Pending">Pending</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Complete">Complete</option>
 
               </select>
             </div>
@@ -159,7 +184,8 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> Start Time
                   </span>
                 </div>
-                <input id="starting_hour" type="time" name="start-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="starting_hour" type="time" name="start-time" class="form-control bg-whi border-md" required
+                    autofocus>
               </div>
               <div>
                 <div class="input-group-prepend">
@@ -167,7 +193,8 @@
                     <i class="fa-solid fa-stopwatch me-1"></i> End Time
                   </span>
                 </div>
-                <input id="ending_hour" type="time" name="end-time" class="form-control bg-whi border-md" required autofocus>
+                <input id="ending_hour" type="time" name="end-time" class="form-control bg-whi border-md" required
+                    autofocus>
               </div>
 
               <div class="total-time">
@@ -192,7 +219,8 @@
                 </span>
               </div>
               <select id="subjects" name="subjects"
-                  class="subject-select form-control custom-select bg-white border-left-0 border-md" multiple required autofocus>
+                  class="subject-select form-control custom-select bg-white border-left-0 border-md" multiple required
+                  autofocus>
                 <!-- <option value="">Bangla</option>
                 <option value="">English</option> -->
 
@@ -206,12 +234,19 @@
                   <i class="fa-regular fa-address-card"></i>
                 </span>
               </div>
-              <textarea class="form-control border-left-0 border-md" id="description" rows="3" autofocus required></textarea>
+              <textarea class="form-control border-left-0 border-md" id="description" rows="3" autofocus
+                  required></textarea>
             </div>
 
             <!-- Submit Button -->
-            <div class="form-group col-lg-12 mx-auto mb-0">
+            <div class="save-btn form-group col-lg-12 mx-auto mb-0">
               <button class="btn btn-primary btn-block py-2 font-weight-bold" type="submit">Submit</button>
+            </div>
+            <div class="loading-btn form-group col-lg-12 mx-auto mb-0">
+              <button class="btn btn-primary btn-block py-2 font-weight-bold" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </div>
 
           </div>

@@ -14,7 +14,7 @@ textarea {
     object-fit: cover;
 }
 
-.form-control{
+.form-control {
     border: 2px solid rgb(188, 187, 187) !important;
     box-shadow: 2px 3px 4px 1px rgb(209, 209, 209);
 }
@@ -37,13 +37,18 @@ a {
     text-decoration: none !important;
 }
 
-.loading-line{
+.loading-line {
     display: none;
 }
 
-@media (min-width:995px){
+@media (min-width:995px) {
 
     .total-time {
         width: 145px;
     }
+}
+
+.loading-btn,
+.change-password-section {
+    display: none;
 }

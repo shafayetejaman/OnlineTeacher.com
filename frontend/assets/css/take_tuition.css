@@ -54,3 +54,21 @@ body {
 .total-time {
     width: 158px;
 }
+
+.loading-btn{
+    display: none;
+}
+
+ .header-6 {
+     background-color: #2b2c30;
+ }
+
+ a {
+     text-decoration: none !important;
+ }
+
+ .select-account{
+    width: 99.5%;
+ }
+
+ 

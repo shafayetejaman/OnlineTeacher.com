@@ -1,4 +1,4 @@
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "https://onlineteacher-com.onrender.com";;
 
 const load_teachers = () =>
 {

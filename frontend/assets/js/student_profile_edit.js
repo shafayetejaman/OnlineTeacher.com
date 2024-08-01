@@ -1,7 +1,7 @@
 // import {URLo} from "./template"
 // console.log(URLo)
 
-const URL = "https://onlineteacher-com.onrender.com";
+const URL = "https://onlineteacher-com.onrender.com";;
 const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
 const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
 const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
@@ -204,13 +204,10 @@ async function load_page()
 
     if (student)
     {
+        document.querySelector(".change-password-section").style.display = "block";
         // insert user data
         Student = student;
         display_user_profile(student);
-    }
-    else
-    {
-        document.querySelector(".change-password-section").style.display = "none";
     }
 
     const file = document.getElementById("img");
@@ -284,7 +281,7 @@ function change_password(event)
                 .then(data =>
                 {
                     console.log(data);
-                    logout();
+                    logout(event);
                 })
                 .catch(err => console.error(err));
         }
