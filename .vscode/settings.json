@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "sqlite",
+            "database": "${workspaceFolder:OnlineTeacher.com}/backend/online_teacher/db.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
