@@ -48,20 +48,20 @@ const registration = async (event) =>
             }).then(res => res.json())
                 .then(data =>
                 {
+                    console.log(data);
                     if (data?.error)
                     {
                         alert(data.error);
                     }
                     else
                     {
-                        window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+                        // window.location.href = "https://mail.google.com/mail/u/0/#inbox";
                     }
                 })
                 .catch(err => console.error(err));
 
             document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
             document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
-
         }
         else
         {
