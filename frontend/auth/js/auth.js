@@ -29,7 +29,8 @@ const registration = async (event) =>
     if (password == confirm_password)
     {
 
-        if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password))
+        // if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password))
+        if (true)
         {
 
             document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
@@ -49,7 +50,7 @@ const registration = async (event) =>
                 .then(data =>
                 {
                     console.log(data);
-                    if (data.error)
+                    if (data?.error)
                     {
                         alert(data.error);
                         document.getElementById('pass').value = "";
