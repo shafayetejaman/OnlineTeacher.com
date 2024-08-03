@@ -48,8 +48,14 @@ const registration = async (event) =>
             }).then(res => res.json())
                 .then(data =>
                 {
-                    window.location.href = "https://mail.google.com/mail/u/0/#inbox";
-                    console.log(data);
+                    if (data?.error)
+                    {
+                        alert(data.error);
+                    }
+                    else
+                    {
+                        window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+                    }
                 })
                 .catch(err => console.error(err));
 
