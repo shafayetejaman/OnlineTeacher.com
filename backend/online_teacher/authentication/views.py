@@ -57,7 +57,7 @@ def activation(request, uid, token, is_admin):
         user = None
 
     if user and user.is_active:
-        return redirect(f"{FRONTEND_ADDRESS}/auth/login.html")
+        return redirect(f"{FRONTEND_ADDRESS}/auth/register.html")   
 
     if user and default_token_generator.check_token(user, token):
         user.is_active = True
@@ -126,7 +126,7 @@ class changePasswordView(APIView):
             try:
                 validate_password(password=password, user=user)
             except:
-                return Response({"error": "Invalid Password!"})
+                return Response({"error": "Commonly Used Password!"})
 
             if new_pass == con_new_pass and user:
                 user.set_password(new_pass)

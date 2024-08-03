@@ -381,7 +381,7 @@ function change_password(event)
 
     if (new_password == confirm_new_password)
     {
-        if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(new_password))
+        if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/.test(new_password))
         {
             const info = {
                 username: Teacher.user.username,
