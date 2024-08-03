@@ -18,19 +18,12 @@ const registration = async (event) =>
         confirm_password,
     };
 
-    if (await is_user(username))
-    {
-        alert("User name already exits!");
-        return;
-    }
-
     console.log(info);
 
     if (password == confirm_password)
     {
 
-        // if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password))
-        if (true)
+        if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password))
         {
 
             document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
@@ -86,19 +79,6 @@ const get_value = (id) =>
 {
     return document.getElementById(id).value;
 };
-
-async function is_user(username)
-{
-    let user = null;
-    const url = `${URL}/accounts/user-list/?username=${username}`;
-
-    await fetch(url)
-        .then(res => res.json())
-        .then(data => user = data)
-        .catch(err => console.error(err));
-
-    return user?.length > 0;
-}
 
 function logout(event)
 {

@@ -46,7 +46,7 @@ class RegistrationUserSerializer(serializers.ModelSerializer):
             validate_password(password=password, user=user)
         except:
             user.delete()
-            raise serializers.ValidationError({"error": "Invalid Password!"})
+            raise serializers.ValidationError({"error": "Commonly Used Password!"})
 
         user.is_active = False
         user.save()

@@ -285,7 +285,16 @@ function change_password(event)
                 .then(data =>
                 {
                     console.log(data);
-                    logout(event);
+                    if (data?.error)
+                    {
+                        alert(data.error)
+                        document.getElementById('old_password').value = "";
+                        document.getElementById('new_password').value = "";
+                    }
+                    else
+                    {
+                        logout(event);
+                    }
                 })
                 .catch(err => console.error(err));
         }
