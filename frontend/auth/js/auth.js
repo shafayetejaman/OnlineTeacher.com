@@ -49,13 +49,15 @@ const registration = async (event) =>
                 .then(data =>
                 {
                     console.log(data);
-                    if (data?.error)
+                    if (data.error)
                     {
                         alert(data.error);
+                        document.getElementById('pass').value = "";
+                        document.getElementById('con-pass').value = "";
                     }
                     else
                     {
-                        // window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+                        window.location.href = "https://mail.google.com/mail/u/0/#inbox";
                     }
                 })
                 .catch(err => console.error(err));
