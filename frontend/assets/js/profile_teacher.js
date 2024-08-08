@@ -92,7 +92,7 @@ const display_profile = async (teacher, user_id, is_owner) =>
             <div class="mt-3">
               <h4 class="text-warning">${teacher.user.username}</h4>
               <p class="text-white my-3">${teacher.description}</p>
-              <a class="btn btn-info text-white">Follow</a>
+              <a class="btn btn-info text-white my-1 my-lg-0">Follow</a>
               <a class="btn btn-outline-success" target="__blank" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${teacher.user.email}">Message</a>
             </div>
 
