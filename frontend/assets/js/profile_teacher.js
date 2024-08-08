@@ -168,7 +168,7 @@ const display_profile = async (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Subjects</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.subjects.map(sub => `<div class='btn btn-info'>${sub.name}</div>`).join(" ")}
+                ${teacher.subjects.map(sub => `<div class='btn btn-info my-1 my-lg-0'>${sub.name}</div>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">
@@ -177,7 +177,7 @@ const display_profile = async (teacher, user_id, is_owner) =>
                 <h6 class="mb-0 text-white">Available Days</h6>
               </div>
               <div class="col-sm-9 text-white">
-                ${teacher.week_days_option.map(day => `<div class='btn btn-success'>${day.name}</div>`).join(" ")}
+                ${teacher.week_days_option.map(day => `<div class='btn btn-success my-1 my-lg-0'>${day.name}</div>`).join(" ")}
               </div>
             </div>
             <hr class="text-white">
