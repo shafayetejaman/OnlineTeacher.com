@@ -368,10 +368,9 @@ async function has_tuition(teacher_id)
 
   tuition.forEach(tui =>
   {
-    if (tui.status == "Ongoing")
+    if (tui.status != "Pending")
     {
       ongoing = true;
-      return;
     }
   });
 
