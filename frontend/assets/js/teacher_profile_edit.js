@@ -2,12 +2,13 @@
 // console.log(URLo)
 
 const URL = "https://onlineteacher-com.onrender.com";
-const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
-const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
-const DEFAULT_IMG = "https://i.imghippo.com/files/I9WYK1721756674.png";
+// const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
+// const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
+const DEFAULT_IMG = "https://online-teacher-com.netlify.app/assets/img/static/default_user.png";
 
-let Teacher = null;
-let UploadImg = null;
+let Student = null;
+// let UploadImg = null;
+const Form = new FormData();
 
 function is_logged()
 {
@@ -243,73 +244,112 @@ async function update_teacher(event)
     const qualification = document.getElementById("qualification").value;
 
     let selected = document.querySelectorAll("#subjects option:checked");
-    const subjects = Array.from(selected).map(sum => sum.value);
+    const subjects = Array.from(selected).map(sub => sub.value);
 
     selected = document.querySelectorAll("#week_days_option option:checked");
-    const week_days_option = Array.from(selected).map(day => day.value);
+    const week_days_option = Array.from(selected).map(day => parseInt(day.value));
 
-    const info = {
-        user: user_id,
-        img: UploadImg ? UploadImg : (Teacher ? Teacher.img : DEFAULT_IMG),
-        phone_number,
-        description,
-        address,
-        starting_hour,
-        ending_hour,
-        total_hours,
-        github: github ? github : "#",
-        facebook: facebook ? facebook : "#",
-        linkedin: linkedin ? linkedin : "#",
-        twitter: twitter ? twitter : "#",
-        qualification,
-        first_name,
-        last_name,
-        email,
-        subjects,
-        week_days_option,
-    };
+    // const info = {
+    //     user: user_id,
+    //     img: UploadImg ? UploadImg : (Teacher ? Teacher.img : DEFAULT_IMG),
+    //     phone_number,
+    //     description,
+    //     address,
+    //     starting_hour,
+    //     ending_hour,
+    //     total_hours,
+    //     github: github ? github : "#",
+    //     facebook: facebook ? facebook : "#",
+    //     linkedin: linkedin ? linkedin : "#",
+    //     twitter: twitter ? twitter : "#",
+    //     qualification,
+    //     first_name,
+    //     last_name,
+    //     email,
+    //     subjects,
+    //     week_days_option,
+    // };
 
-    console.log(info);
+    // console.log(info);
+
     document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
     document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
-    if (Teacher)
-    {
-        const url = `${URL}/accounts/update-teacher/${Teacher.id}`;
-        const token = localStorage.getItem("token");
+    // if (Teacher)
+    // {
+    //     const url = `${URL}/accounts/update-teacher/${Teacher.id}`;
+    //     const token = localStorage.getItem("token");
 
-      await fetch(url, {
-            method: "PUT",
-            headers: {
-                Authorization: `Token ${token}`,
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(info)
-        }
-        ).then(res => res.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err));
-    }
-    else
-    {
-        const url = `${URL}/accounts/teacher-list/`;
-        const token = localStorage.getItem("token");
+    //   await fetch(url, {
+    //         method: "PUT",
+    //         headers: {
+    //             Authorization: `Token ${token}`,
+    //             "content-type": "application/json"
+    //         },
+    //         body: JSON.stringify(info)
+    //     }
+    //     ).then(res => res.json())
+    //         .then(data => console.log(data))
+    //         .catch(err => console.error(err));
+    // }
+    // else
+    // {
+    //     const url = `${URL}/accounts/teacher-list/`;
+    //     const token = localStorage.getItem("token");
 
-       await fetch(url, {
-            method: "POST",
-            headers: {
-                Authorization: `Token ${token}`,
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(info)
-        }
-        ).then(res => res.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err));
-    }
+    //    await fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             Authorization: `Token ${token}`,
+    //             "content-type": "application/json"
+    //         },
+    //         body: JSON.stringify(info)
+    //     }
+    //     ).then(res => res.json())
+    //         .then(data => console.log(data))
+    //         .catch(err => console.error(err));
+    // }
+
+    Form.append("user", user_id);
+    Form.append("phone_number", phone_number);
+    Form.append("description", description);
+    Form.append("address", address);
+    Form.append("starting_hour", starting_hour);
+    Form.append("ending_hour", ending_hour);
+    Form.append("github", github || "#");
+    Form.append("facebook", facebook || "#");
+    Form.append("linkedin", linkedin || "#");
+    Form.append("twitter", twitter || "#");
+    Form.append("first_name", first_name);
+    Form.append("last_name", last_name);
+    Form.append("email", email);
+    Form.append("qualification", qualification);
+    Form.append("total_hours", total_hours);
+    Form.append("week_days_option", week_days_option);
+    subjects.forEach(sub => Form.append("subjects", sub)); 
+
+    const url = Teacher ? `${URL}/accounts/update-teacher/${Teacher.id}` : `${URL}/accounts/teacher-list/`;
+    const token = localStorage.getItem("token");
+    console.log(Form.get("subjects"))
+
+    await fetch(url, {
+        method: Teacher ? "PUT" : "POST",
+        headers: {
+            Authorization: `Token ${token}`
+
+        },
+        body: Form
+    })
+        .then(res => res.json())
+        .then(data =>
+        {
+            console.log(data);
+        })
+        .catch(err => console.error(err));
 
     document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
     document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
+
     window.location.href = "profile_teacher.html";
 }
 
@@ -344,23 +384,23 @@ async function load_page()
         document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "none");
         document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "block");
 
-        const form = new FormData();
-        form.append("file", event.target.files[0]);
+        Form.append("img", event.target.files[0]);
 
-        await fetch(`https://proxy.cors.sh/https://www.imghippo.com/v1/upload?api_key=${IMG_HIPPO_API_KEY}`, {
-            method: 'POST',
-            headers: {
-                'x-cors-api-key': PROXY_CORE_API_KEY
-            },
-            body: form
 
-        }).then(res => res.json())
-            .then(data =>
-            {
-                console.log(data);
-                UploadImg = data.data.view_url;
-            })
-            .catch(err => console.error(err));
+        // await fetch( `https://proxy.cors.sh/https://www.imghippo.com/v1/upload?api_key=${IMG_HIPPO_API_KEY}`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'x-cors-api-key': PROXY_CORE_API_KEY
+        //     },
+        //     body: form
+
+        // } ).then( res => res.json() )
+        //     .then( data =>
+        //     {
+        //         console.log( data );
+        //         UploadImg = data.data.view_url;
+        //     } )
+        //     .catch( err => console.error( err ) );
 
         document.querySelectorAll(".save-btn").forEach(btn => btn.style.display = "block");
         document.querySelectorAll(".loading-btn").forEach(btn => btn.style.display = "none");
