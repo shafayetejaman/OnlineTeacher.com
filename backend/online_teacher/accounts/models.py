@@ -50,7 +50,7 @@ class Teacher(models.Model):
     facebook = models.CharField(max_length=200, default="#")
     linkedin = models.CharField(max_length=200, default="#")
     twitter = models.CharField(max_length=200, default="#")
-    img = models.ImageField(upload_to="uploads/", default="#")
+    img = models.ImageField(upload_to="uploads/", default=USER_DEFAULT_IMAGE)
     # img = models.CharField(max_length=200, default=USER_DEFAULT_IMAGE)
     address = models.CharField(max_length=100)
 
@@ -63,7 +63,7 @@ class Student(models.Model):
     current_class = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=20)
     description = models.TextField()
-    img = models.ImageField(upload_to="uploads/", default="#")
+    img = models.ImageField(upload_to="uploads/", default=USER_DEFAULT_IMAGE)
     # img = models.CharField(max_length=200, default=USER_DEFAULT_IMAGE)
     address = models.CharField(max_length=100)
 

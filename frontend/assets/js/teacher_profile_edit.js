@@ -4,7 +4,7 @@
 const URL = "https://onlineteacher-com.onrender.com";
 // const IMG_HIPPO_API_KEY = "LI13eY0MqVCFIFPo9Ifw33Sx4zG9I9nv";
 // const PROXY_CORE_API_KEY = "temp_ee17654e67a694852277c7cb354b8fd7";
-const DEFAULT_IMG = "https://online-teacher-com.netlify.app/assets/img/static/default_user.png";
+// const DEFAULT_IMG = "https://online-teacher-com.netlify.app/assets/img/static/default_user.png";
 
 let Student = null;
 // let UploadImg = null;
@@ -325,12 +325,13 @@ async function update_teacher(event)
     Form.append("email", email);
     Form.append("qualification", qualification);
     Form.append("total_hours", total_hours);
-    Form.append("week_days_option", week_days_option);
+
     subjects.forEach(sub => Form.append("subjects", sub)); 
+    week_days_option.forEach(day => Form.append("week_days_option", day)); 
 
     const url = Teacher ? `${URL}/accounts/update-teacher/${Teacher.id}` : `${URL}/accounts/teacher-list/`;
     const token = localStorage.getItem("token");
-    console.log(Form.get("subjects"))
+    console.log(Form.get("su"))
 
     await fetch(url, {
         method: Teacher ? "PUT" : "POST",
