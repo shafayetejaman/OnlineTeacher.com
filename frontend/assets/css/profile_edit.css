@@ -12,11 +12,16 @@ textarea {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    
+}
+
+.text{
+    color:#212529 !important;
 }
 
 .form-control {
-    border: 2px solid rgb(188, 187, 187) !important;
-    box-shadow: 2px 3px 4px 1px rgb(209, 209, 209);
+ background-color: rgb(43, 44, 48) !important;
+ color: white !important;
 }
 
 .labels {
@@ -51,4 +56,11 @@ a {
 .loading-btn,
 .change-password-section {
     display: none;
+}
+
+.card {
+    background: linear-gradient(to right, #2980b9, #274e75);
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
 }
