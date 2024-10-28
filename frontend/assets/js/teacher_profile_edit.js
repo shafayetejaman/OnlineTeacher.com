@@ -168,6 +168,7 @@ function display_user_profile(teacher)
     document.getElementById("phone_number").value = teacher.phone_number;
     document.getElementById("description").value = teacher.description;
     document.getElementById("address").value = teacher.address;
+    document.getElementById("salary").value = teacher.salary;
     document.getElementById("starting_hour").value = teacher.starting_hour;
     document.getElementById("ending_hour").value = teacher.ending_hour;
     document.getElementById("total_hours").value = teacher.total_hours.slice(0, 5);
@@ -232,6 +233,7 @@ async function update_teacher(event)
     const phone_number = document.getElementById("phone_number").value;
     const description = document.getElementById("description").value;
     const address = document.getElementById("address").value;
+    const salary = document.getElementById("salary").value;
     const starting_hour = document.getElementById("starting_hour").value;
     const ending_hour = document.getElementById("ending_hour").value;
     const github = document.getElementById("github").value;
@@ -314,6 +316,7 @@ async function update_teacher(event)
     Form.append("phone_number", phone_number);
     Form.append("description", description);
     Form.append("address", address);
+    Form.append("salary", salary);
     Form.append("starting_hour", starting_hour);
     Form.append("ending_hour", ending_hour);
     Form.append("github", github || "#");

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from .constrains import DAY_CHOICES, QUALIFICATION
 from core.settings import USER_DEFAULT_IMAGE
+from decimal import Decimal
 
 # Create your models here.
 
@@ -50,6 +51,9 @@ class Teacher(models.Model):
     facebook = models.CharField(max_length=200, default="#")
     linkedin = models.CharField(max_length=200, default="#")
     twitter = models.CharField(max_length=200, default="#")
+    salary = models.DecimalField(
+        decimal_places=2, default=Decimal("2000.00"), max_digits=10
+    )
     img = models.ImageField(upload_to="uploads/", default=USER_DEFAULT_IMAGE)
     # img = models.CharField(max_length=200, default=USER_DEFAULT_IMAGE)
     address = models.CharField(max_length=100)

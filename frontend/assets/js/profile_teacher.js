@@ -156,6 +156,15 @@ const display_profile = async (teacher, user_id, is_owner) =>
             <hr class="text-white">
             <div class="row">
               <div class="col-sm-3">
+                <h6 class="mb-0 text-white">Expected Salary</h6>
+              </div>
+              <div class="col-sm-9 text-white">
+                ${teacher.salary}
+              </div>
+            </div>
+            <hr class="text-white">
+            <div class="row">
+              <div class="col-sm-3">
                 <h6 class="mb-0 text-white">Qualification</h6>
               </div>
               <div class="col-sm-9 text-white">
