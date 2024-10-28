@@ -159,13 +159,14 @@ const display_teacher_cards = (data) =>
 
             <hr class="line">
 
-            <small class="mt-4">${teacher.description.slice(0, 80)}</small>
+            <small class="mt-4">${teacher.description.slice(0, 70)}${teacher.description.length > 70 ? "..." : ""}</small>
             <div class="social-buttons mt-5">
               <a href="${teacher.facebook}" target="__blank" class="text-decoration-none"><button class="neo-button"><i
                     class="facebook-icon lni lni-facebook-filled"></i></button></a>
               <a href="${teacher.linkedin}" target="__blank" class="text-decoration-none"><button class="neo-button"><i
                     class="linkedin-icon lni lni-linkedin-original"></i></button></a>
-              <a href="${teacher.github}" target="__blank" class="text-decoration-none"><button class="neo-button"><i class="fa-brands fa-github"></i></button></a>
+              <a href="${teacher.github}" target="__blank" class="text-decoration-none"><button class="neo-button"><i 
+                    class="fa-brands fa-github"></i></button></a>
               <a href="${teacher.twitter}" target="__blank" class="text-decoration-none"><button class="neo-button"><i
                     class="twitter-icon lni lni-twitter-filled"></i> </button></a>
             </div>
